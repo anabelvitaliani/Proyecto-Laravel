@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//esta ruta carga el formulario
+Route::get('/product/create', 'ProductController@create');
+//esta ruta carga guarda los datos
+Route::post('/product/create', 'ProductController@save');
 
 Route::get('/', function () {
     return view('home');
