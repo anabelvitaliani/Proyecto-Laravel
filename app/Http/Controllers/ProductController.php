@@ -25,17 +25,21 @@ class ProductController extends Controller
         'nombre.unique'=>'El producto ya existe',
         'nombre.string'=>'El nombre debe contener solo letras',
         'descripcion.required'=>'La descripcioncion es necesaria',
-        'descripcion.string'=>'La descripcioncion debe contener solo letras',
-        'precio.required'=>'El campo precioio es obligatorio',
+        'descripcion.string'=>'La descripcion debe contener solo letras',
+        'precio.required'=>'El campo precio es obligatorio',
         'precio.numeric'=>'El precioio debe contener solo numeros',
         'descuento.numeric'=>'El precioio debe contener solo numeros',
       ]);
 //si pongo algo aca y no pasó las validaciones previas, no se ejecuta
 
 //primera forma posible
-    Product::create(
+    \App\Product::create(
       [
-        'nombre'=>$request->input('nombre')
+        'nombre'=>$request->input('nombre'),
+        'descripcion'=>$request->input('descripcion'),
+        'precio'=>$request->input('precio'),
+        'descuento'=>$request->input('descuento'),
+        'avatar'=>$request->input('avatar'),
       ]
     );
 
@@ -52,5 +56,39 @@ $product->save();*/
 
 //sin el return, no redirige
 return redirect('/product');
+    }
+
+
+    public function edit($id){
+    $product = Product::find($id);
+
+    return view('movies.edit')
+    ->with();
+    }
+
+    public function update($id, Request $request){
+
+      $this->validate($request, [
+        'nombre'=>'required|unique:products|string',
+        'descripcion'=>'required|string',
+        'precio'=>'required|numeric',
+        'descuento'=>'numeric'
+      ],
+      [
+//nombre del imput-validacion que falla (se puede poner solo una)
+        '.required'=>'El campo nombre es obligatorio',
+        'nombre.unique'=>'El producto ya existe',
+        '.string'=>'El campo debe contener solo letras',
+        '.numeric'=>'El campo debe contener solo numeros',
+      ]);
+
+      $productEdit = Product::find($id);
+
+      $prudctEdit->nombre = $request->nombre;
+      $prudctEdit->descripcion = $request->descripcion;
+      $prudctEdit->precio = $request->precio;
+      $prudctEdit->descuento = $request->descuento;
+
+      $productEdit->save();
     }
 }

@@ -1,6 +1,8 @@
+
+
 <form class="" action="/product/create" method="post">
 
-<!--$errors siempre existe(creo)-->
+<!--$errors siempre existe-->
 @if (count($errors)>0)
 <div class="">
   <ul>
@@ -22,12 +24,12 @@
   </div>
 
   <div class="">
-    <label for="descripcion">descripcioncion:</label>
+    <label for="descripcion">descripcion:</label>
     <input type="text" name="descripcion" value="{{ old('descripcion') }}">
   </div>
 
   <div class="">
-    <label for="precio">precioio:</label>
+    <label for="precio">precio:</label>
     <input type="text" name="precio" value="{{ old('precio') }}">
   </div>
 
@@ -35,6 +37,12 @@
     <label for="descuento">Descuento:</label>
     <input type="text" name="descuento" value="{{ old('desc') }}">
   </div>
+
+  <div class="">
+    <label for="avatar">avatar:</label>
+    <input type="text" name="avatar" value="{{ old('avatar') }}">
+  </div>
+
   <button type="submit">Guardar</button>
 
 

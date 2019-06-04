@@ -15,6 +15,9 @@ Route::get('/product/create', 'ProductController@create');
 //esta ruta carga guarda los datos
 Route::post('/product/create', 'ProductController@save');
 
+//Route::post('/movies/edit/{id}', 'MoviesController@update');
+//Route::get('/movies/edit/{id}', 'MoviesController@edit');
+
 Route::get('/', function () {
     return view('home');
 });
