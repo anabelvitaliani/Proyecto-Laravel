@@ -14,10 +14,12 @@
 Route::get('/product/create', 'ProductController@create');
 //esta ruta carga guarda los datos
 Route::post('/product/create', 'ProductController@save');
+//listado de productos
+Route::get('/product', 'ProductController@index');
 
 //Route::post('/movies/edit/{id}', 'MoviesController@update');
 //Route::get('/movies/edit/{id}', 'MoviesController@edit');
-
+Route::get('/preguntas', 'PreguntasController@index');
 Route::get('/', function () {
     return view('home');
 });

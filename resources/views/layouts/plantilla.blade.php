@@ -16,8 +16,10 @@
   <body>
 @include('partials.menu')
 
+<div class="contenedor">
 @yield('contenido')
 
 @include('partials.footer')
+</div>
   </body>
 </html>

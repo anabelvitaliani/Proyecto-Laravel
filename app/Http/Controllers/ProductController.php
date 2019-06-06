@@ -3,11 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class ProductController extends Controller
 {
+    public function index(){
+      $products = Product::all();
+      //dd($products);
+      return view('products.showProducts')->with(compact('products'));
+    }
+
+
     public function create(){
-      return view('newproduct');
+      return view('products.newproduct');
     }
 
 //siempre que mando datos por un formulario (a la bd creo) no uso post ni get, sino $request, que es un objeto
@@ -17,7 +25,8 @@ class ProductController extends Controller
         'nombre'=>'required|unique:products|string',
         'descripcion'=>'required|string',
         'precio'=>'required|numeric',
-        'descuento'=>'numeric'
+        'descuento'=>'numeric',
+        'categoria'=>'required|string',
       ],
       [
 //nombre del imput-validacion que falla (se puede poner solo una)
@@ -40,6 +49,7 @@ class ProductController extends Controller
         'precio'=>$request->input('precio'),
         'descuento'=>$request->input('descuento'),
         'avatar'=>$request->input('avatar'),
+        'categoria'=>$request->input('categoria'),
       ]
     );
 
@@ -84,11 +94,12 @@ return redirect('/product');
 
       $productEdit = Product::find($id);
 
-      $prudctEdit->nombre = $request->nombre;
+      $prudctEdit->nombre = $request->input('nombre');
       $prudctEdit->descripcion = $request->descripcion;
       $prudctEdit->precio = $request->precio;
       $prudctEdit->descuento = $request->descuento;
 
       $productEdit->save();
+      //return redirect('');
     }
 }

@@ -42,7 +42,11 @@
     <label for="avatar">avatar:</label>
     <input type="text" name="avatar" value="{{ old('avatar') }}">
   </div>
-
+  <div class="">
+    <label for="categoria">Categoria:</label>
+    <!--los name de los input tienen que ser iguales a los de la db-->
+    <input type="text" name="categoria" id="categoria" value="{{ old('categoria') }}">
+  </div>
   <button type="submit">Guardar</button>
 
 

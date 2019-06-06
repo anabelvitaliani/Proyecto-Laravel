@@ -28,6 +28,11 @@
   </div>
   <button type="submit">Guardar</button>
 
+  <div class="">
+    <label for="categoria">Categoria:</label>
+    <!--los name de los input tienen que ser iguales a los de la db-->
+    <input type="text" name="categoria" id="categoria" value="{{ old('categoria', $product->categoria) }}">
+  </div>
 
 
 </form>
