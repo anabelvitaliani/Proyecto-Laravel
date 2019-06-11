@@ -7,7 +7,7 @@
   <div class="contenedor">
        <main>
          <h2 class="bienvenido">
-           "¡Bienvenido!"
+           ¡Bienvenido!
          </h2>
          <section>
               <br>

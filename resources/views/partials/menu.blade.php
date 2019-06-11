@@ -1,6 +1,6 @@
       <header class="menu">
         <div class="nombreymenu">
-          <h4 class="nombreh4"><a class="nombre" href="home.php">Chocolatemia</a></h4>
+          <h4 class="nombreh4"><a class="nombre" href="/">Chocolatemia</a></h4>
         </div>
         <!--<div class="">
         <img src="../Imagenes/img/menu2.png" alt="menu" class="hamburguesa">
