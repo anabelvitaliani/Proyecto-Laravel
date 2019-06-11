@@ -12,8 +12,10 @@
 */
 //esta ruta carga el formulario
 Route::get('/product/create', 'ProductController@create');
+//->middleware('auth');
 //esta ruta carga guarda los datos
 Route::post('/product/create', 'ProductController@save');
+//->middleware('auth');
 //listado de productos
 Route::get('/product', 'ProductController@index');
 
@@ -23,3 +25,7 @@ Route::get('/preguntas', 'PreguntasController@index');
 Route::get('/', function () {
     return view('home');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
