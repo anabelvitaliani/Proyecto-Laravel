@@ -20,6 +20,11 @@ Route::get('/product', 'ProductController@index');
 //Route::post('/movies/edit/{id}', 'MoviesController@update');
 //Route::get('/movies/edit/{id}', 'MoviesController@edit');
 Route::get('/preguntas', 'PreguntasController@index');
+Route::get('/cerrarSesion', 'LoginController@logout');
 Route::get('/', function () {
     return view('home');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
