@@ -24,9 +24,8 @@ Route::get('/product', 'ProductController@index');
 Route::get('/preguntas', 'PreguntasController@index');
 Route::get('/cerrarSesion', 'LoginController@logout');
 Route::get('/', function () {
-    return view('home');
+    return view('/');
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
