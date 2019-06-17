@@ -6,7 +6,7 @@
 @section('contenido')
      <div class="contenedor">
 
-    <main>
+    <main class="main">
       <div class="form-register">
     <form class="register" action="/register" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}

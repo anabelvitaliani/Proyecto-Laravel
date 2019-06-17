@@ -14,8 +14,8 @@
             @guest
               <li><a href="/register">Registrate</a></li>
               <li><a href="/login">Iniciar Sesión</a></li>
-
             @endguest
+            <li><a href="/product">Productos</a></li>
             <li><a href="/preguntas">Preguntas Frecuentes</a></li>
             <li><a href="#contacto">Contactate con nosotros</a></li>
             @auth

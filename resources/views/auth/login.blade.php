@@ -5,7 +5,7 @@
 @endsection
 @section('contenido')
       <div class="contenedor">
-<main>
+<main class="main">
   <div class="form-login">
   <form class="login" action="/login" method="post">
     {{ csrf_field() }}

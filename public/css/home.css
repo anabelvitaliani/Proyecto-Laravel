@@ -111,7 +111,7 @@ h2 {
 	-ms-flex-pack: center;
 	justify-content: center;
   flex-flow: wrap;
-  
+
 }
 
 
@@ -230,23 +230,10 @@ div .button:hover{
   padding-top: 6px;
 }
 
-@media (max-width: 460px) {
-
-
-}
 .container-primary {
   width: 93%;
   float: none;
   height: 750%;
   border: 1px solid black;
   text-align: center;
-}
-
-/*p {
-  padding: 40px 40px 10px;
-  margin: 0 50px;
-}*/
-
-@media (min-width: 960px) {
-
 }

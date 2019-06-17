@@ -18,6 +18,9 @@ h1 {
   background-image: url('../Imagenes/img/register.jpg');
   background-size: cover;
 }
+.main {
+  padding: 10% 6%;
+}
 
 input {
   border-radius: 5px;
@@ -26,12 +29,6 @@ input {
   padding: 5px;
   margin: 2% 0 3% 0;
   font-size: inherit;
-}
-.form-register {
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 6%;
-  margin-bottom:6%;
 }
 
 .label-registro {
