@@ -5,20 +5,18 @@
 @endsection
 
 @section('contenido')
-<form class="" action="/product/create" method="post">
-  <input type="submit" name="" value="Nuevo producto" class="submit">
-</form>
+<a href="/product/create">Nuevo producto</a>
   @foreach ($products as $product)
   <div class="product">
-    <!--cuando tengamos imagen aca ponemos la/s imagen/es-->
+    <img src="{{Storage::url($product->avatar)}}" alt="">
     <strong>{{$product->nombre}}</strong>
     <p>{{$product->descripcion}}</p>
     @if ($product->descuento!=0)
     <p>Este producto tiene un descuento del %{{$product->descuento}}*100, aprovechalo!</p>
     @endif
     <p>{{$product->precio}}</p>
+    <a href="#">Modificar producto</a>
     <form class="" action="" method="post">
-      <input type="submit" name="" value="Modificar producto" class="submit">
       <input type="submit" name="" value="Agregar al carrito" class="submit">
     </form>
   </div>
