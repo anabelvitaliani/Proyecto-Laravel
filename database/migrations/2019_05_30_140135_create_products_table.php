@@ -21,9 +21,12 @@ class CreateProductsTable extends Migration
             //cantidad total de valores, cantidad de decimales
             $table->decimal('precio', 10, 2);
             $table->decimal('descuento');
-            $table->string('avatarUno');
-            $table->string('avatarDos')->nullable();
-            $table->string('categoria');
+            $table->string('avatarUno')->nullable();
+            $table->integer('stock');
+            $table->integer('categorie_id');
+
+        //    $table->foreing('categorie_id')->references('id')->on('categories');
+
         });
     }
 
