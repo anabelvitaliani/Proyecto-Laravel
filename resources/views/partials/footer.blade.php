@@ -1,13 +1,5 @@
 <footer class="footer" id="contacto">
-    <a class="titulo-footer" href="home.php">Chocolatemia</a>
-
-    <!--<ul class="productos-footer">
-      <li><a href="#">BOMBONES</a></li>
-      <li><a href="#">TORTAS</a></li>
-      <li><a href="#">SIN TACC</a></li>
-      <li><a href="#">SIN LECHE</a></li>
-    </ul>-->
-
+    <a class="titulo-footer" href="/">Chocolatemia</a>
     <ul class="contacto">
       <li>Tel: 4863-1774</li>
       <li>Mail: chocolatemia@gmail.com</li>

@@ -1,7 +1,6 @@
 .product{
   border: 1px solid black;
-  display: inline-grid;
-  width: 25vw;
+/*  display: inline-grid;*/
   height:30vh;
   padding:8px;
   margin: 10px;
@@ -10,4 +9,13 @@
 .submit{
   padding:2px;
   margin:3px;
+}
+#nuevoproducto{
+  display:block;
+}
+.productimg{
+  height: 20vh;
+}
+.preciotachado{
+  text-decoration:line-through;
 }

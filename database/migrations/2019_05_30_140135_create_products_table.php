@@ -11,6 +11,7 @@ class CreateProductsTable extends Migration
      *
      * @return void
      */
+
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
@@ -23,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->decimal('descuento');
             $table->string('avatar');
             $table->integer('stock')->nullable();
-          //  $table->integer('categorie_id');
+            $table->integer('categorie_id')->nullable();
 
         //    $table->foreing('categorie_id')->references('id')->on('categories');
 

@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->date('fecha')->nullable();
             $table->integer('telefono')->nullable();
             $table->string('avatar')->nullable();
+            $table->boolean('admin')->default(false);
         });
     }
 

@@ -14,10 +14,13 @@
 Route::get('/product/create', 'ProductController@create')->middleware('auth');
 // guarda los datos
 Route::post('/product/create', 'ProductController@save')->middleware('auth');
+//carga el formulario
+Route::get('/product/edit/{id}', 'MoviesController@edit')->middleware('auth');
+// guarda los datos
+Route::post('/product/edit/{id}', 'MoviesController@update')->middleware('auth');
 //listado de productos
 Route::get('/product', 'ProductController@index');
-//Route::post('/movies/edit/{id}', 'MoviesController@update');
-//Route::get('/movies/edit/{id}', 'MoviesController@edit');
+
 Route::get('/preguntas', 'PreguntasController@index');
 Route::get('/cerrarSesion', 'LoginController@logout');
 
