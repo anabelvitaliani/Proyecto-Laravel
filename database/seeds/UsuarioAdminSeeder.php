@@ -13,11 +13,13 @@ class UsuarioAdminSeeder extends Seeder
     {
       DB::table("users")->insert(
       [
-        ["name"=> "Anabel"],
-        ["surname"=> "DH"],
-        ["email"=> "anabel.vitaliani@gmail.com"],
-        ["password"=> "dh123456"],
-        ["admin"=> true],
+        [
+        "name"=> "Anabel",
+        "surname"=> "DH",
+        "email"=> "anabel.vitaliani@gmail.com",
+        "password"=> "dh123456",
+        "admin"=> true,
+        ]
       ]
       );
     }

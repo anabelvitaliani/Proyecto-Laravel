@@ -14,12 +14,12 @@ class ProductController extends Controller
     }
 
 
-    public function create(){
+public function create(){
       return view('products.newproduct');
-    }
+}
 
 //siempre que mando datos por un formulario (a la bd creo) no uso post ni get, sino $request, que es un objeto
-    public function save(Request $request){
+public function save(Request $request){
 //1er parametro:qué voy a validar, 2do:como, 3ero:especificacion de msjs de error si queres cambiar los de laravel
       $this->validate($request, [
         'nombre'=>'required|unique:products|string',
@@ -66,17 +66,16 @@ $product->save();*/
 
 //sin el return, no redirige
 return redirect('/product');
-    }
+}
 
 
-    public function edit($id){
+public function edit($id){
     $product = Product::find($id);
 
-    return view('movies.edit')
-    ->with();
-    }
+    return view('products.editProduct')->with(compact('product'));
+}
 
-    public function update($id, Request $request){
+public function update($id, Request $request){
 
       $this->validate($request, [
         'nombre'=>'required|unique:products|string',
@@ -87,9 +86,9 @@ return redirect('/product');
       [
 //nombre del imput-validacion que falla (se puede poner solo una)
         '.required'=>'El campo nombre es obligatorio',
-        'nombre.unique'=>'El producto ya existe',
         '.string'=>'El campo debe contener solo letras',
         '.numeric'=>'El campo debe contener solo numeros',
+        'nombre.unique'=>'El producto ya existe',
       ]);
 
       $productEdit = Product::find($id);

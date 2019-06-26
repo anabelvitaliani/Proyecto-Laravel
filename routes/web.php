@@ -15,9 +15,11 @@ Route::get('/product/create', 'ProductController@create')->middleware('auth');
 // guarda los datos
 Route::post('/product/create', 'ProductController@save')->middleware('auth');
 //carga el formulario
-Route::get('/product/edit/{id}', 'MoviesController@edit')->middleware('auth');
+Route::get('/product/edit/{id}', 'ProductController@edit');
+//->middleware('auth');
 // guarda los datos
-Route::post('/product/edit/{id}', 'MoviesController@update')->middleware('auth');
+Route::post('/product/edit/{id}', 'ProductController@update');
+//->middleware('auth');
 //listado de productos
 Route::get('/product', 'ProductController@index');
 
