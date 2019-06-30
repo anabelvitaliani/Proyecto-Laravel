@@ -9,7 +9,6 @@
 h1 {
   font-size: 2em;
   font-family: 'Playfair Display SC', serif;
-  margin-left: 3%;
   padding-bottom: 5vh;
   font-style: italic;
 }
@@ -28,19 +27,19 @@ input {
   margin: 2% 0 3% 0;
   font-size: inherit;
 }
-.newProduct {
+.n-product {
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 0;
   margin-bottom:6%;
 }
 
-.label-newProduct {
+.label{
   color: #fff;
   font-size: 25px;
   padding: 5px;
   font-style: italic;
-  display:block;
+  margin-right: 1%;
 }
 #comentarios{
   color: #fff;
@@ -80,7 +79,7 @@ select {
   font-size: 20px;
 }
 
-.form-newProduct {
+.form {
   background-color: #7955488f;
   padding: 20px;
 }

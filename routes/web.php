@@ -11,9 +11,11 @@
 |
 */
 //carga el formulario
-Route::get('/product/create', 'ProductController@create')->middleware('auth');
+Route::get('/product/create', 'ProductController@create');
+//->middleware('auth');
 // guarda los datos
-Route::post('/product/create', 'ProductController@save')->middleware('auth');
+Route::post('/product/create', 'ProductController@save');
+//->middleware('auth');
 //carga el formulario
 Route::get('/product/edit/{id}', 'ProductController@edit');
 //->middleware('auth');
