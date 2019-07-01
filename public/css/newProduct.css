@@ -13,6 +13,10 @@ h1 {
   font-style: italic;
 }
 
+mark {
+  background-color: #FFF9C4;
+  color:red;
+}
 .contenedor{
   background-image: url('../Imagenes/img/register.jpg');
   background-size: cover;

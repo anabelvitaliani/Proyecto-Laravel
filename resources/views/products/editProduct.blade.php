@@ -18,7 +18,7 @@
         <!--los name de los input tienen que ser iguales a los de la db-->
         <input type="text" name="nombre" id="nombre" value="{{ old('nombre', $product->nombre) }}">
         @error ('nombre')
-          <div class=""> {{ $message }} </div>
+          <mark class=""> {{ $message }} </mark>
         @enderror
       </div>
 
@@ -26,7 +26,7 @@
         <label class="label" for="descripcion">Descripcioncion</label>
         <input type="text" name="descripcion" value="{{ old('descripcion', $product->descripcion) }}">
         @error ('descripcion')
-          <div class=""> {{ $message }} </div>
+          <mark class=""> {{ $message }} </mark>
         @enderror
       </div>
 
@@ -34,7 +34,7 @@
         <label class="label" for="precio">Precio</label>
         <input type="text" name="precio" value="{{ old('precio', $product->precio) }}">
         @error ('precio')
-          <div class=""> {{ $message }} </div>
+          <mark class=""> {{ $message }} </mark>
         @enderror
       </div>
 
@@ -42,7 +42,7 @@
         <label class="label" for="descuento">Descuento</label>
         <input type="text" name="descuento" value="{{ old('descuento', $product->descuento) }}">
         @error ('descuento')
-          <div class=""> {{ $message }} </div>
+          <mark class=""> {{ $message }} </mark>
         @enderror
       </div>
 
@@ -51,7 +51,7 @@
         <!--los name de los input tienen que ser iguales a los de la db-->
         <input type="text" name="categoria" id="categoria" value="{{ old('categoria', $product->categorie->name) }}">
         @error ('categoria')
-          <div class=""> {{ $message }} </div>
+          <mark class=""> {{ $message }} </mark>
         @enderror
       </div>
 
@@ -59,7 +59,7 @@
         <label class="label" for="avatar">Avatar</label>
         <input type="file" name="avatar" value="{{ old('avatar', $product->categorie->avatar)}}">
         @error ('avatar')
-          <div class=""> {{ $message }} </div>
+          <mark class=""> {{ $message }} </mark>
         @enderror
       </div>
 

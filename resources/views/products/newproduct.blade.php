@@ -18,7 +18,7 @@
         <!--los name de los input tienen que ser iguales a los de la db-->
         <input type="text" name="nombre" id="nombre" value="{{ old('nombre') }}">
         @error ('nombre')
-          <div class=""> {{ $message }} </div>
+          <mark class=""> {{ $message }} </mark>
         @enderror
       </div>
 
@@ -26,7 +26,7 @@
         <label class="label" for="descripcion">Descripcion</label>
         <input type="text" name="descripcion" value="{{ old('descripcion') }}">
         @error ('descripcion')
-          <div class=""> {{ $message }} </div>
+          <mark class=""> {{ $message }} </mark>
         @enderror
       </div>
 
@@ -34,7 +34,7 @@
         <label class="label" for="precio">Precio</label>
         <input type="text" name="precio" value="{{ old('precio') }}">
         @error ('precio')
-          <div class=""> {{ $message }} </div>
+          <mark class=""> {{ $message }} </mark>
         @enderror
       </div>
 
@@ -42,7 +42,7 @@
         <label class="label" for="descuento">Descuento</label>
         <input type="text" name="descuento" value="{{ old('desc') }}">
         @error ('descuento')
-          <div class=""> {{ $message }} </div>
+          <mark class=""> {{ $message }} </mark>
         @enderror
       </div>
 
@@ -51,7 +51,7 @@
         <!--los name de los input tienen que ser iguales a los de la db-->
         <input type="text" name="categoria" id="categoria" value="{{ old('categoria') }}">
         @error ('categoria')
-          <div class=""> {{ $message }} </div>
+          <mark class=""> {{ $message }} </mark>
         @enderror
       </div>
 
@@ -60,7 +60,7 @@
         <input type="file" name="avatar" value="{{ old('avatar') }}">
       </div>
       @error ('avatar')
-        <div class=""> {{ $message }} </div>
+        <mark class=""> {{ $message }} </mark>
       @enderror
       <div class="">
 

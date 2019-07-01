@@ -27,17 +27,15 @@ public function save(Request $request){
         'precio'=>'required|numeric',
         'descuento'=>'numeric',
         'categoria'=>'required|string',
+      //  'avatar' => 'image',
       ],
       [
 //nombre del imput-validacion que falla (se puede poner solo una)
-        'nombre.required'=>'El campo nombre es obligatorio',
+        'required'=>'El campo es obligatorio',
         'nombre.unique'=>'El producto ya existe',
-        'nombre.string'=>'El nombre debe contener solo letras',
-        'descripcion.required'=>'La descripcioncion es necesaria',
-        'descripcion.string'=>'La descripcion debe contener solo letras',
-        'precio.required'=>'El campo precio es obligatorio',
-        'precio.numeric'=>'El precioio debe contener solo numeros',
-        'descuento.numeric'=>'El precioio debe contener solo numeros',
+        'string'=> 'Este campo debe contener solo letras',
+        'numeric'=>'Este campo debe contener solo numeros',
+      //  'image' => 'Imagen invalida',
       ]);
 //si pongo algo aca y no pasó las validaciones previas, no se ejecuta
 
@@ -81,14 +79,18 @@ public function update($id, Request $request){
         'nombre'=>'required|unique:products|string',
         'descripcion'=>'required|string',
         'precio'=>'required|numeric',
-        'descuento'=>'numeric'
+        'descuento'=>'numeric',
+        'avatar' => 'image',
+        //categoria
       ],
       [
 //nombre del imput-validacion que falla (se puede poner solo una)
-        '.required'=>'El campo nombre es obligatorio',
+        '.required'=>'El campo es obligatorio',
         '.string'=>'El campo debe contener solo letras',
         '.numeric'=>'El campo debe contener solo numeros',
         'nombre.unique'=>'El producto ya existe',
+        'image' => 'Imagen invalida'
+        //falta validacion de categoria
       ]);
 
       $productEdit = Product::find($id);
@@ -97,7 +99,8 @@ public function update($id, Request $request){
       $prudctEdit->descripcion = $request->descripcion;
       $prudctEdit->precio = $request->precio;
       $prudctEdit->descuento = $request->descuento;
-
+      //categoria
+      //avatar
       $productEdit->save();
       //return redirect('');
     }

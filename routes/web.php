@@ -19,7 +19,7 @@ Route::post('/product/create', 'ProductController@save');
 //carga el formulario
 Route::get('/product/edit/{id}', 'ProductController@edit');
 //->middleware('auth');
-// guarda los datos
+// guarda las modificaciones
 Route::post('/product/edit/{id}', 'ProductController@update');
 //->middleware('auth');
 //listado de productos
