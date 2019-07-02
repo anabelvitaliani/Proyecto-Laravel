@@ -17,7 +17,7 @@ class UsuarioAdminSeeder extends Seeder
         "name"=> "Anabel",
         "surname"=> "DH",
         "email"=> "anabel.vitaliani@gmail.com",
-        "password"=> "dh123456",
+        "password"=> Hash::make("dh123456"),
         "admin"=> true,
         ]
       ]

@@ -7,7 +7,7 @@
 
 <main class="main">
   <div class="n-product">
-    <form class="form" action="/product/create" method="post">
+    <form class="form" action="/product/create" method="post" enctype="multipart/form-data">
       <h1 style="color:white">Nuevo producto</h1>
 
       <!--seguridad-->

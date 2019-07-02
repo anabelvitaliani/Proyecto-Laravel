@@ -8,10 +8,10 @@
 <a href="/product/create" id="nuevoproducto">Nuevo producto</a>
   @foreach ($products as $product)
   <div class="product">
-  <img src="{{Storage::url($product->avatar)}}" alt="{{Storage::url($product->nombre)}}" class="productimg">
+  <img src="/storage/productsImg/{{$product->avatar}}" alt="{{Storage::url($product->nombre)}}" class="productimg">
     <strong>{{$product->nombre}}</strong>
     <p>{{$product->descripcion}}</p>
-    <p>{{$product->categorie->name}}</p>
+    <p>{{isset($product->categorie) ? $product->categorie->name : ''}}</p>
     @if ($product->descuento!=0)
     <p class="preciotachado">{{$product->precio}}</p>
     {{ ($product->precio/100)*(100-$product->descuento) }}

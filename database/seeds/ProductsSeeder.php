@@ -19,7 +19,7 @@ class ProductsSeeder extends Seeder
               "descripcion"=> "Delicioso bocadito de chocolate relleno de un suave y tentador dulce de leche.",
               "precio"=>100,
               "descuento"=>0,
-              "avatar"=>"ProductsImg/Bombonddl.jpg",
+              "avatar"=>"Bombonddl.jpg",
           //    "stock" =>
               "categorie_id"=>1,
             ],
@@ -28,7 +28,7 @@ class ProductsSeeder extends Seeder
               "descripcion"=>"Exquisita combinación de whisky y café, cubierto de chocolate amargo",
               "precio"=>150,
               "descuento"=>0,
-              "avatar"=>"ProductsImg/BIrlandes.jpg",
+              "avatar"=>"BIrlandes.jpg",
               "categorie_id"=>1,
             ],
             [
@@ -36,7 +36,7 @@ class ProductsSeeder extends Seeder
               "descripcion"=>"Chocolate semiamargo con crema de naranja",
               "precio"=>150,
               "descuento"=>20,
-              "avatar"=>"ProductsImg/BombonNaranja.jpg",
+              "avatar"=>"BombonNaranja.jpg",
               "categorie_id"=>1,
             ],
             [
@@ -44,7 +44,7 @@ class ProductsSeeder extends Seeder
               "descripcion"=>"Cascaritas de naranja tiernizadas bañadas en chocolate con leche",
               "precio"=>150,
               "descuento"=>10,
-              "avatar"=>"ProductsImg/naranjaYChoco.jpg",
+              "avatar"=>"naranjaYChoco.jpg",
               "categorie_id"=>1,
             ],
             [
@@ -52,7 +52,7 @@ class ProductsSeeder extends Seeder
               "descripcion"=>"Relleno de mermelada casera de frambuesa, cubierto de los mas ricos frutos rojos.",
               "precio"=>150,
               "descuento"=>0,
-              "avatar"=>"ProductsImg/bombonesFrambuesa.jpg",
+              "avatar"=>"bombonesFrambuesa.jpg",
               "categorie_id"=>1,
             ],
             [
@@ -60,7 +60,7 @@ class ProductsSeeder extends Seeder
               "descripcion"=>"Los mas exquisitos higos bañados en chocolate con leche.",
               "precio"=>180,
               "descuento"=>0,
-              "avatar"=>"ProductsImg/Higos.jpg",
+              "avatar"=>"Higos.jpg",
               "categorie_id"=>1,
             ],
             [
@@ -68,7 +68,7 @@ class ProductsSeeder extends Seeder
               "descripcion"=>"Relleno de mermelada casera de frambuesa y duce de leche, cubierto de chocolate amargo. Gramaje=180g.",
               "precio"=>38,
               "descuento"=>0,
-              "avatar"=>"ProductsImg/alfFrambuesa.jpg",
+              "avatar"=>"alfFrambuesa.jpg",
               "categorie_id"=>2,
             ],
             [
@@ -76,7 +76,7 @@ class ProductsSeeder extends Seeder
               "descripcion"=>"Quebradiza masa de ojaldre con relleno de dulce de leche repostero. Gramaje=120g.",
               "precio"=>38,
               "descuento"=>10,
-              "avatar"=>"ProductsImg/AlfHojaldre.PNG",
+              "avatar"=>"AlfHojaldre.PNG",
               "categorie_id"=>2,
             ],
             [
@@ -84,7 +84,7 @@ class ProductsSeeder extends Seeder
               "descripcion"=>"Quebradiza masa de ojaldre con relleno de dulce de leche repostero y recubierto con chocolate. Gramaje=150g.",
               "precio"=>45,
               "descuento"=>0,
-              "avatar"=>'ProductsImg/AlfHojadreyCh.PNG',
+              "avatar"=>'AlfHojadreyCh.PNG',
               "categorie_id"=>2,
             ],
             [
@@ -92,7 +92,7 @@ class ProductsSeeder extends Seeder
             "descripcion"=>"Clásicos alfajores de maicena y dulce de leche, rodeados de un toque de coco.",
             "precio"=>30,
             "descuento"=>0,
-            "avatar"=>'ProductsImg/maicena.jpg',
+            "avatar"=>'maicena.jpg',
             "categorie_id"=>2,
             ],
             [
@@ -100,7 +100,7 @@ class ProductsSeeder extends Seeder
               "descripcion"=>"Tradicional torta de queso mascarpone, con una base de galletas y recubierta de mermelada de frambuesa artesanal",
               "precio"=>600,
               "descuento"=>0,
-              "avatar"=>"ProductsImg/cheesecake.jpg",
+              "avatar"=>"cheesecake.jpg",
               "categorie_id"=>3,
             ],
             [
@@ -108,7 +108,7 @@ class ProductsSeeder extends Seeder
               "descripcion"=>"Se compone de tres pisos de helado artesanal, cada uno recubierto de galletas caseras de vainilla. Las capas pueden ser de dulche de leche, crema americana y chocolate, o a elección por encargo.",
               "precio"=>60,
               "descuento"=>10,
-              "avatar"=>"ProductsImg/THelada.jpg",
+              "avatar"=>"THelada.jpg",
               "categorie_id"=>3,
             ],
             [
@@ -116,7 +116,7 @@ class ProductsSeeder extends Seeder
             "descripcion"=>"Cupcakes de naranja, cubiertos de una crema de chocolate blanco",
             "precio"=>60,
             "descuento"=>0,
-            "avatar"=>"ProductsImg/cupcakeNaranja.jpg",
+            "avatar"=>"cupcakeNaranja.jpg",
             "categorie_id"=>3,
             ],
           ]

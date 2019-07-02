@@ -26,8 +26,8 @@ public function save(Request $request){
         'descripcion'=>'required|string',
         'precio'=>'required|numeric',
         'descuento'=>'numeric',
-        'categoria'=>'required|string',
-      //  'avatar' => 'image',
+      //  'categoria'=>'required|string',
+        'avatar' => 'image',
       ],
       [
 //nombre del imput-validacion que falla (se puede poner solo una)
@@ -39,6 +39,9 @@ public function save(Request $request){
       ]);
 //si pongo algo aca y no pasó las validaciones previas, no se ejecuta
 
+    $path = $request->file("avatar")->store("public/productsImg");
+    $nombreAvatar = basename($path);
+
 //primera forma posible
     \App\Product::create(
       [
@@ -46,7 +49,7 @@ public function save(Request $request){
         'descripcion'=>$request->input('descripcion'),
         'precio'=>$request->input('precio'),
         'descuento'=>$request->input('descuento'),
-        'avatar'=>$request->input('avatar'),
+        'avatar'=> $nombreAvatar,
         'categoria'=>$request->input('categoria'),
       ]
     );
