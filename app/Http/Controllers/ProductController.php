@@ -9,13 +9,22 @@ class ProductController extends Controller
 {
     public function index(){
       $products = Product::all();
+    //  $categories = Categorie::all();
       //dd($products);
-      return view('products.showProducts')->with(compact('products'));
+      return view('products.showProducts')->with([
+        "products" => $products,
+      //  "categories" => $categories
+      ]);
     }
 
 
 public function create(){
-      return view('products.newproduct');
+  $products = Product::all();
+  $categories = Categorie::all();
+  return view('products.newproduct')->with([
+        "products" => $products,
+        "categories" => $categories
+      ]);;
 }
 
 //siempre que mando datos por un formulario (a la bd creo) no uso post ni get, sino $request, que es un objeto

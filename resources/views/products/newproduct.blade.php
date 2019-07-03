@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="/css/newProduct.css">
 @endsection
 @section('contenido')
-
 <main class="main">
   <div class="n-product">
     <form class="form" action="/product/create" method="post" enctype="multipart/form-data">
@@ -47,13 +46,17 @@
       </div>
 
       <div class="">
-        <label class="label" for="categoria">Categoria</label>
-        <!--los name de los input tienen que ser iguales a los de la db-->
-        <input type="text" name="categoria" id="categoria" value="{{ old('categoria') }}">
-        @error ('categoria')
-          <mark class=""> {{ $message }} </mark>
-        @enderror
+              <label class="label" for="categoria">Categoria</label>
+              <select class="categoria" name="categoria">
+                @foreach ($categories as $categorie)
+                  <option value="$categories->id">{{ $categories->name }}</option>
+                @endforeach
+              </select>
+              @error ('categoria')
+                <mark class=""> {{ $message }} </mark>
+              @enderror
       </div>
+
 
       <div class="">
         <label class="label" for="avatar">Avatar</label>
