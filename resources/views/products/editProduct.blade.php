@@ -7,7 +7,7 @@
 
 <main class="main">
   <div class="n-product">
-    <form class="form" action="/product/edit/{id}" method="post">
+    <form class="form" action="/product/edit/{{$product->id}}" method="post" enctype="multipart/form-data">
       <h1 style="color:white">Editar producto</h1>
 
     <!--seguridad-->

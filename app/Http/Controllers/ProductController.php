@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Categorie;
 
 class ProductController extends Controller
 {
@@ -36,7 +37,7 @@ public function save(Request $request){
         'precio'=>'required|numeric',
         'descuento'=>'numeric',
       //  'categoria'=>'required|string',
-        'avatar' => 'image',
+        'avatar' => 'required|image',
       ],
       [
 //nombre del imput-validacion que falla (se puede poner solo una)
@@ -88,7 +89,7 @@ public function edit($id){
 public function update($id, Request $request){
 
       $this->validate($request, [
-        'nombre'=>'required|unique:products|string',
+        'nombre'=>'required|string|unique:products,nombre,'.$id,
         'descripcion'=>'required|string',
         'precio'=>'required|numeric',
         'descuento'=>'numeric',
@@ -107,10 +108,10 @@ public function update($id, Request $request){
 
       $productEdit = Product::find($id);
 
-      $prudctEdit->nombre = $request->input('nombre');
-      $prudctEdit->descripcion = $request->descripcion;
-      $prudctEdit->precio = $request->precio;
-      $prudctEdit->descuento = $request->descuento;
+      $productEdit->nombre = $request->nombre;
+      $productEdit->descripcion = $request->descripcion;
+      $productEdit->precio = $request->precio;
+      $productEdit->descuento = $request->descuento;
       //categoria
       //avatar
       $productEdit->save();

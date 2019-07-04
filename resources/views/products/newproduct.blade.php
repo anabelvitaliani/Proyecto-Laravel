@@ -39,7 +39,7 @@
 
       <div class="">
         <label class="label" for="descuento">Descuento</label>
-        <input type="text" name="descuento" value="{{ old('desc') }}">
+        <input type="text" name="descuento" value="{{ old('descuento') }}">
         @error ('descuento')
           <mark class=""> {{ $message }} </mark>
         @enderror
@@ -48,8 +48,8 @@
       <div class="">
               <label class="label" for="categoria">Categoria</label>
               <select class="categoria" name="categoria">
-                @foreach ($categories as $categorie)
-                  <option value="$categories->id">{{ $categories->name }}</option>
+                @foreach ($categories as $category)
+                  <option value="{{$category->id}}">{{ $category->name }}</option>
                 @endforeach
               </select>
               @error ('categoria')

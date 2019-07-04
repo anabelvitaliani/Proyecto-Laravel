@@ -20,31 +20,30 @@
         @endif
           <br>
           <br>
-    <p>
+    <div>
       <label for="email" class="label">Email</label>
       <input id="email"type="email" name="email" value="{{old('email')}}">
-    </p>
+    </div>
     <br>
-    <p>
+    <div>
       <label for="password"  class="label">Contraseña</label>
       <input id="password"type="password" name="password" value="">
 
-    </p>
+    </div>
     <br>
-    <p>
+    <div>
       <input id="rec"type="radio" name="rec" value="r">
       <label for="rec">Recordarme</label>
-    <p>
+    </div>
       <br>
       <a href="/home">¿Olvidaste tu contraseña?</a>
       <br>
       <br>
       <button class="boton"type="submit" name="button">INGRESAR</button>
-      </p>
     <br>
     <br>
     </form>
   </div>
 </main>
-
+<script type="text/javascript" src="/js/login/login.js"></script>
 @endsection
