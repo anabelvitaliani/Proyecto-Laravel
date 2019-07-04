@@ -18,6 +18,12 @@
     @else
     <p>{{$product->precio}}</p>
     @endif
+
+    @if ($product->stock)
+    <p>Hay stock</p>
+    @else
+    <p>Sin stock</p>
+    @endif
     <a href="/product/edit/{{$product['id']}}">Modificar producto</a>
     <form class="" action="" method="post">
       <input type="submit" name="" value="Agregar al carrito" class="submit">

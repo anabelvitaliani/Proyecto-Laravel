@@ -82,8 +82,11 @@ return redirect('/product');
 
 public function edit($id){
     $product = Product::find($id);
-
-    return view('products.editProduct')->with(compact('product'));
+    $categories = Categorie::all();
+    return view('products.editProduct')->with([
+          "product" => $product,
+          "categories" => $categories
+        ]);;
 }
 
 public function update($id, Request $request){
@@ -115,6 +118,6 @@ public function update($id, Request $request){
       //categoria
       //avatar
       $productEdit->save();
-      //return redirect('');
+      return redirect('/product');
     }
 }

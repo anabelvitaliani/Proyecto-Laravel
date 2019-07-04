@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->decimal('precio', 10, 2);
             $table->decimal('descuento');
             $table->string('avatar');
-            $table->integer('stock')->nullable();
+            $table->boolean('stock')->nullable();
             $table->integer('categorie_id')->nullable();
 
         //    $table->foreing('categorie_id')->references('id')->on('categories');
