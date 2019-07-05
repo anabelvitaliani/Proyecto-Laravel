@@ -10,18 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/product/delete/{id}', 'ProductController@delete');
 //carga el formulario
-Route::get('/product/create', 'ProductController@create');
-//->middleware('auth');
+Route::get('/product/create', 'ProductController@create')->middleware('admin');
 // guarda los datos
-Route::post('/product/create', 'ProductController@save');
-//->middleware('auth');
+Route::post('/product/create', 'ProductController@save')->middleware('admin');
 //carga el formulario
-Route::get('/product/edit/{id}', 'ProductController@edit');
-//->middleware('auth');
+Route::get('/product/edit/{id}', 'ProductController@edit')->middleware('admin');
 // guarda las modificaciones
-Route::post('/product/edit/{id}', 'ProductController@update');
-//->middleware('auth');
+Route::post('/product/edit/{id}', 'ProductController@update')->middleware('admin');
 //listado de productos
 Route::get('/product', 'ProductController@index');
 

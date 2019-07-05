@@ -17,7 +17,7 @@ window.onload = function() {
         }
 
     password.onblur = function() {
-      if(password.value != ''){
+      if(password.value.trim() != ''){
         console.log("hola");
         if (this.parentElement.children[2]) {
           this.parentElement.removeChild(this.parentElement.children[2]);
@@ -27,7 +27,7 @@ window.onload = function() {
 
     form.onsubmit = function (event) {
    event.preventDefault();
-      if (email.value == '') {
+      if (email.value.trim() == '') {
         var error = document.createElement('span');
         error.innerText = 'Este campo debe de estar lleno';
         var div = email.parentElement;
@@ -39,7 +39,7 @@ window.onload = function() {
         event.preventDefault();
       }
 
-      if (password.value == '') {
+      if (password.value.trim() == '') {
         var error = document.createElement('span');
         error.innerText = 'Debe de estar lleno';
         var div = password.parentElement;

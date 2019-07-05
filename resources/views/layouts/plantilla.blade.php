@@ -15,11 +15,11 @@
   </head>
   <body>
 @include('partials.menu')
-
 <div class="contenedor">
+
 @yield('contenido')
 
-@include('partials.footer')
 </div>
+@include('partials.footer')
   </body>
 </html>

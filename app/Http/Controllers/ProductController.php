@@ -120,4 +120,10 @@ public function update($id, Request $request){
       $productEdit->save();
       return redirect('/product');
     }
+
+    function delete($id){
+      $product = Product::find($id);
+      $product->delete();
+      return redirect('/product');
+    }
 }
