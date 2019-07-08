@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Categorie;
 
+
 class ProductController extends Controller
 {
     public function index(){
-      $products = Product::all();
+      $products = Product::paginate(3);
     //  $categories = Categorie::all();
       //dd($products);
       return view('products.showProducts')->with([
@@ -36,7 +37,7 @@ public function save(Request $request){
         'descripcion'=>'required|string',
         'precio'=>'required|numeric',
         'descuento'=>'numeric',
-      //  'categoria'=>'required|string',
+      //  'categoria'=>'required',
         'avatar' => 'required|image',
       ],
       [

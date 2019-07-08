@@ -6,6 +6,10 @@
   color: black;
 }
 
+h2 {
+  font-family: 'Playfair Display SC', serif;;
+  font-size: 2em;
+}
 
 .product {
   background-color: #f8e0e6b3;
@@ -31,9 +35,22 @@ a {
   font-weight: bold;
 }
 
+#paginacion {
+  border: 1px solid #cccccc3b;
+  background-color: #e0e0e06b;
+  overflow: hidden;
+
+}
+
+img {
+  float: left;
+}
+
+
 .product{
   font-size:1em;
 }
+
 
 .product{
   border: 1px solid black;
@@ -52,6 +69,7 @@ a {
   border: #fff;
   font-family: sans-serif;
   color: #fff;
+  float: right;
 }
 #nuevoproducto{
   display:block;
