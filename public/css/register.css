@@ -31,6 +31,12 @@ input {
   font-size: inherit;
 }
 
+.form-login mark{
+  background-color: #FFF9C4;
+  display: inline;
+  color:red;
+}
+
 .label-registro {
   color: #fff;
   font-size: 25px;

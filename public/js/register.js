@@ -1,3 +1,5 @@
+window.onload = function () {
+
 var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
 function validarVacio(input) {
@@ -12,17 +14,15 @@ function validarVacio(input) {
 function pintarError(input, mensaje) {
   //  var error = document.createElement('span');
     //error.setAttribute('class','invalid-feedback');
-    var strong = document.createElement('strong');
-    strong.innerText = mensaje;
+    var mark = document.createElement('mark');
+    mark.innerText = mensaje;
     var div = elemento.parentElement;
     if (div.children[2]) {
         div.removeChild(div.children[2]);
     }
-    error.append(strong);
+    error.append(mark);
   //  div.append(error);
 }
-
-window.onload = function () {
 
   var form = document.querySelector('form');
 

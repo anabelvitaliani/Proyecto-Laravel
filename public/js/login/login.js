@@ -29,7 +29,7 @@ window.onload = function() {
    event.preventDefault();
       if (email.value.trim() == '') {
         var error = document.createElement('span');
-        error.innerText = 'Este campo debe de estar lleno';
+        error.innerText = 'Por favor, complete este campo';
         var div = email.parentElement;
 
         if (div.children[2]) {
@@ -40,8 +40,8 @@ window.onload = function() {
       }
 
       if (password.value.trim() == '') {
-        var error = document.createElement('span');
-        error.innerText = 'Debe de estar lleno';
+        var error = document.createElement('mark');
+        error.innerText = 'Por favor, complete este campo';
         var div = password.parentElement;
         if (div.children[2]) {
           div.removeChild(div.children[2]);
@@ -51,8 +51,8 @@ window.onload = function() {
       }
       event.preventDefault();
       if (!regexEmail.test(email.value)) {
-            var error = document.createElement('span');
-            error.innerText = 'Email invalido';
+            var error = document.createElement('mark');
+            error.innerText = 'El mail ingresado es invalido';
             var div = email.parentElement;
             if (div.children[2]) {
                 div.removeChild(div.children[2]);
