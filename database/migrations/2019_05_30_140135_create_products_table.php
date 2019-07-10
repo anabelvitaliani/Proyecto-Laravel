@@ -23,10 +23,11 @@ class CreateProductsTable extends Migration
             $table->decimal('precio', 10, 2);
             $table->decimal('descuento');
             $table->string('avatar');
-            $table->boolean('stock')->nullable();
-            $table->integer('categorie_id')->nullable();
-
-        //    $table->foreing('categorie_id')->references('id')->on('categories');
+            $table->unsignedInteger('stock')->nullable();
+            $table->unsignedInteger('categorie_id')->nullable();
+            $table->unsignedInteger('brand_id')->nullable();
+            //$table->foreign('categorie_id')->references('id')->on('categories');
+            //$table->foreign('brand_id')->references('id')->on('brands');
 
         });
     }

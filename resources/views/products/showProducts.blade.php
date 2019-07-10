@@ -6,13 +6,34 @@
 
 @section('contenido')
 <h2>Lista de Productos</h2>
+<br>
 @auth
 
   @if(auth::user()->admin)
     <a href="/product/create" id="nuevoproducto">Nuevo producto</a>
     {{ $products->random() }}
-@endif
+  @endif
 @endauth
+
+
+    <br>
+    <nav>
+    <div class="">
+      <form action="/search" method="GET">
+      {{csrf_field()}}
+      <input type="text" name="search" class="search">
+      <button type="submit" class="btn" class="submit1">Buscar</button>
+        </form>
+
+    </div>
+    </nav>
+
+    <div id="paginacion">
+      {!!$products->render()!!}
+
+    </div>
+
+
 
   @foreach ($products as $product)
   <div class="product">
@@ -38,23 +59,37 @@
     @endif
     <p>{{$product['id']}}</p>
 
+    @auth
 
-@auth
+      @if(auth::user()->admin)
+        <a href="/product/edit/{{$product['id']}}">Modificar producto</a>
+        <a href="/product/delete/{{$product['id']}}">Eliminar producto</a>
+      @endif
 
-  @if(auth::user()->admin)
-    <a href="/product/edit/{{$product['id']}}">Modificar producto</a>
-    <a href="/product/delete/{{$product['id']}}">Eliminar producto</a>
-  @endif
+    @endauth
 
-@endauth
       <br>
       <br>
-    <form class="" action="" method="post">
-      <input type="submit" name="" value="Agregar al carrito" class="submit">
-      <input type="submit" name="" value="Quitar del carrito" class="submit">
-    </form>
+      @if ($cart->list())
+        <a href="/chechout"></a>
+    <button class="btn btn-ssuccess">Carrito</button>
+      @endif
+      @if (!$cart->contains($product))
+        <form action="/ToCart/{{$product['id']}}" method="post">
+          {{csrf_field()}}
+          <button type="submit" class="submit">Quitar del Carrito</button>
+        </form>
+      @endif
+      @if (!$cart->contains($product))
+        <form action="/addToCart/{{$product['id']}}" method="post">
+          {{csrf_field()}}
+          <button type="submit" class="submit">Agregar al Carrito</button>
+        </form>
+      @endif
+
     </div>
   @endforeach
+
 
 
 @endsection

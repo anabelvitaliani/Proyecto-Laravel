@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class Admin
+class CreateCart
 {
     /**
      * Handle an incoming request.
@@ -13,12 +13,9 @@ class Admin
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
-    {
-      if (!$request->user()->admin) {
-       return redirect('/');
-      }
-        //return $next($request);
-
+    public function handle($request, Closure $next){
+      $cart = new \App\Cart();
+       \View::share('cart', $cart);
+        return $next($request);
     }
 }

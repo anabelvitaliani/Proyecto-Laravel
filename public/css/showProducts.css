@@ -24,7 +24,7 @@ h2 {
   background-color: #eee;
   padding: 50px 15px;
   text-align: center;
-  width:100vw;
+  width:100%;
 }
 
 a {
@@ -39,11 +39,11 @@ a {
   border: 1px solid #cccccc3b;
   background-color: #e0e0e06b;
   overflow: hidden;
-
 }
 
 img {
   float: left;
+  border-radius: 5px;
 }
 
 
@@ -70,6 +70,25 @@ img {
   font-family: sans-serif;
   color: #fff;
   float: right;
+}
+
+.btn{
+  padding: 8px;
+  border-radius: 5px;
+  font-style: italic;
+  border: #fff;
+  font-family: sans-serif;
+  color: black;
+  background-color: #ffffffad;
+}
+
+.search{
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: left;
+  padding: 5px;
+  margin: 2% 0 3% 0;
+  font-size: inherit;
 }
 #nuevoproducto{
   display:block;

@@ -28,6 +28,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function products(){
+      return $this->belongsToMany(Product::class, "shopping", "user_id", "product_id");
+    }
     /**
      * The attributes that should be cast to native types.
      *
