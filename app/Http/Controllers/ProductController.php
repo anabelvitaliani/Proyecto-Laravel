@@ -5,18 +5,65 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Categorie;
+use App\Brand;
+use App\Cart;
+use Auth;
 
 
 class ProductController extends Controller
 {
     public function index(){
+      $cart = new Cart();
       $products = Product::paginate(3);
-    //  $categories = Categorie::all();
+    //  $categories = Categorie::paginate(2);
       //dd($products);
-      return view('products.showProducts')->with([
+      return view('products.showProducts', compact('products', 'cart'))->with([
         "products" => $products,
       //  "categories" => $categories
       ]);
+    }
+
+    public function addToCart($id){
+      $cart = new Cart();
+      $product = Product::find($id);
+      $cart->add($product);
+
+      return redirect("/products");
+    }
+
+    public function deleteToCart($id){
+      $product = Product::find($id);
+      $cart->delete($product);
+
+      return redirect("/products");
+    }
+
+    public function checkout(){
+      $cart = new Cart();
+      if (!$cart->list){
+        return redirect("/products");
+      }
+      return view("checkout");
+    }
+
+    public function finishCheckout(){
+      $cart = new Cart();
+      $products = $cart->list();
+
+      foreach ($products as $product){
+        $product->stock = $product->stock - 1;
+        $product->save();
+
+        $product->customers()->attach(Auth::id());
+      }
+      $cart->clear();
+      return view("success");
+    }
+
+    public function search(Request $req){
+      $search =$req["search"];
+      $products = Product::where("name", "like", "%$search%")->get();
+      return view("search", compact("products"));
     }
 
 
@@ -37,7 +84,7 @@ public function save(Request $request){
         'descripcion'=>'required|string',
         'precio'=>'required|numeric',
         'descuento'=>'numeric',
-      //  'categoria'=>'required',
+      //  'categoria'=>'required|string',
         'avatar' => 'required|image',
       ],
       [
