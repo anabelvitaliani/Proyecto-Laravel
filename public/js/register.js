@@ -39,11 +39,11 @@ function pintarError(input, mensaje) {
           }
           if (elemento.type != 'file' && validarVacio(elemento)) {
               event.preventDefault();
-          }
-          if (elemento.name == 'email' &&  !regexEmail.test(elemento.value)) {
+          } else if (elemento.name == 'email' && !elemento.parentElement.children[2] && !regexEmail.test(elemento.value)) {
               pintarError(elemento, 'Email invalido');
               event.preventDefault();
           }
+
           if (elemento.name == 'password') {
               var confirm = document.querySelector('#password_confirmation');
               if (elemento.value.length < 8) {
@@ -60,18 +60,30 @@ function pintarError(input, mensaje) {
 var elementos = form.elements;
 
 for (elemento of elementos) {
+
   elemento.onblur = function() {
     if (this.type != 'submit' && this.type != 'hidden' && this.type != 'reset' ) {
 
-      console.log(!validarVacio(this), this.parentElement)
-    if (!validarVacio(this)) {
-      if (this.parentElement.children[2]) {
-        this.parentElement.removeChild(this.parentElement.children[2]);
+      //console.log(!validarVacio(this), this.parentElement)
+      if (!validarVacio(this)) {
+        console.log(elemento.name, !regexEmail.test(elemento.value))
+        if (this.parentElement.children[2]) {
+          this.parentElement.removeChild(this.parentElement.children[2]);
+          if (elemento.name == 'email' &&  !regexEmail.test(elemento.value)) {
+            pintarError(elemento, 'Email invalido');
           }
         }
       }
-    }
 
+      if (elemento.name == 'email' &&  !regexEmail.test(elemento.value)) {
+        console.log('bla');
+        if (this.parentElement.children[2]) {
+          this.parentElement.removeChild(this.parentElement.children[2]);
+            }
+          }
+
+      }
+    }
   }
 
 

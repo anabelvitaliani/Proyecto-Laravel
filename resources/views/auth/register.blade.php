@@ -30,18 +30,18 @@
     <div>
     <label for="surname" class="label-registro">Apellido</label>
     <input id="surname"type="text" name="surname" value="{{old('surname')}}" placeholder="Ingrese su apellido *">
-  </div>
+    </div>
+
+    <div>
+    <label for="email" class="label-registro">Email</label>
+    <input id="email" type="email" name="email" value="{{old('email')}}"placeholder="nombre@nombre.com *">
+    </div>
 
     <div>
     <label for="fecha" class="label-registro">Fecha de nacimiento</label>
     <input id="fecha"type="date" name="fecha" value="{{old('fecha')}}">
+    </div>
 
-  </div>
-    <div>
-    <label for="email" class="label-registro">Email</label>
-    <input id="email" type="email" name="email" value="{{old('email')}}"placeholder="nombre@nombre.com *">
-
-  </div>
     <div>
     <label for="password" class="label-registro">Contraseña</label>
     <input id="password" type="password" name="password" value="" placeholder="Contraseña *">
