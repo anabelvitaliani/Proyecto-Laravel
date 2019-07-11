@@ -25,12 +25,12 @@ Route::get('/product', 'ProductController@index');
 Route::get('/preguntas', 'PreguntasController@index');
 Route::get('/cerrarSesion', 'LoginController@logout');
 
-Route::post('addToCart/{id}', 'ProductsController@addToCart');
-Route::post('deleteToCart/{id}', 'ProductsController@addToCart');
-Route::get('/checkout', 'ProductsController@checkout');
-Route::post('/checkout', 'ProductsController@finishCheckout')->middleware("auth");
+Route::post('addToCart/{id}', 'ProductController@addToCart');
+Route::post('deleteToCart/{id}', 'ProductController@addToCart');
+Route::get('/checkout', 'ProductController@checkout');
+Route::post('/checkout', 'ProductController@finishCheckout')->middleware("auth");
 
-Route::get('/search', 'ProductsController@search');
+Route::get('/search', 'ProductController@search');
 
 
 

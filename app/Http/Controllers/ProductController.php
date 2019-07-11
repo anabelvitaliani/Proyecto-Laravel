@@ -28,20 +28,21 @@ class ProductController extends Controller
       $product = Product::find($id);
       $cart->add($product);
 
-      return redirect("/products");
+      return redirect("/product");
     }
 
     public function deleteToCart($id){
       $product = Product::find($id);
       $cart->delete($product);
 
-      return redirect("/products");
+      return redirect("/product");
     }
 
     public function checkout(){
       $cart = new Cart();
+      dd($cart);
       if (!$cart->list){
-        return redirect("/products");
+        return redirect("/product");
       }
       return view("checkout");
     }
@@ -67,14 +68,14 @@ class ProductController extends Controller
     }
 
 
-public function create(){
-  $products = Product::all();
-  $categories = Categorie::all();
-  return view('products.newproduct')->with([
-        "products" => $products,
-        "categories" => $categories
-      ]);;
-}
+  public function create(){
+    $products = Product::all();
+    $categories = Categorie::all();
+    return view('products.newproduct')->with([
+          "products" => $products,
+          "categories" => $categories
+        ]);;
+  }
 
 //siempre que mando datos por un formulario (a la bd creo) no uso post ni get, sino $request, que es un objeto
 public function save(Request $request){

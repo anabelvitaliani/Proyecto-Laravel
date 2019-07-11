@@ -12,15 +12,13 @@ function validarVacio(input) {
 }
 
 function pintarError(input, mensaje) {
-  //  var error = document.createElement('span');
-    //error.setAttribute('class','invalid-feedback');
     var mark = document.createElement('mark');
     mark.innerText = mensaje;
     var div = elemento.parentElement;
     if (div.children[2]) {
         div.removeChild(div.children[2]);
     }
-    error.append(mark);
+    div.append(mark);
   //  div.append(error);
 }
 
@@ -34,9 +32,9 @@ function pintarError(input, mensaje) {
 
   form.onsubmit = function (event) {
       var elementos = this.elements;
-      console.log(elementos);
+      //console.log(elementos);event.preventDefault();
       for (elemento of elementos) {
-          if (elemento.type == 'submit' || elemento.type == 'hidden') {
+          if (elemento.type == 'submit' || elemento.type == 'hidden' || elemento.type == 'reset' ) {
               continue;
           }
           if (elemento.type != 'file' && validarVacio(elemento)) {
@@ -52,11 +50,29 @@ function pintarError(input, mensaje) {
                   pintarError(elemento, 'El password debe tener minimo 8 caracteres');
                   event.preventDefault();
               } else if (elemento.value != confirm.value) {
-                  pintarError(elemento, 'Los pass no coinciden');
+                  pintarError(elemento, 'Las contraseñas no coinciden');
                   event.preventDefault();
               }
           }
       }
   }
+
+var elementos = form.elements;
+
+for (elemento of elementos) {
+  elemento.onblur = function() {
+    if (this.type != 'submit' && this.type != 'hidden' && this.type != 'reset' ) {
+
+      console.log(!validarVacio(this), this.parentElement)
+    if (!validarVacio(this)) {
+      if (this.parentElement.children[2]) {
+        this.parentElement.removeChild(this.parentElement.children[2]);
+          }
+        }
+      }
+    }
+
+  }
+
 
 }

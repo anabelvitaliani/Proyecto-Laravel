@@ -24,12 +24,13 @@ class CreateProductsTable extends Migration
             $table->decimal('descuento');
             $table->string('avatar');
             $table->unsignedInteger('stock')->nullable();
-            $table->unsignedInteger('categorie_id')->nullable();
-            $table->unsignedInteger('brand_id')->nullable();
-            //$table->foreign('categorie_id')->references('id')->on('categories');
-            //$table->foreign('brand_id')->references('id')->on('brands');
-
+            $table->unsignedBigInteger('categorie_id')->nullable();
+            $table->unsignedBigInteger('brand_id')->nullable();
         });
+        Schema::table('products', function (Blueprint $table) {
+          $table->foreign('categorie_id')->references('id')->on('categories');
+          $table->foreign('brand_id')->references('id')->on('brands');
+      });
     }
 
 

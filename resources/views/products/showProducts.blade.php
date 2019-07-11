@@ -11,7 +11,7 @@
 
   @if(auth::user()->admin)
     <a href="/product/create" id="nuevoproducto">Nuevo producto</a>
-    {{ $products->random() }}
+  <!--  {{ $products->random() }} -->
   @endif
 @endauth
 

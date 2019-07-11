@@ -26,7 +26,7 @@ window.onload = function() {
     }
 
     form.onsubmit = function (event) {
-   event.preventDefault();
+
       if (email.value.trim() == '') {
         var error = document.createElement('span');
         error.innerText = 'Por favor, complete este campo';
@@ -49,7 +49,6 @@ window.onload = function() {
         div.append(error);
         event.preventDefault();
       }
-      event.preventDefault();
       if (!regexEmail.test(email.value)) {
             var error = document.createElement('mark');
             error.innerText = 'El mail ingresado es invalido';

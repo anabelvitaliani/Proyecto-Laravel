@@ -39,7 +39,7 @@
       <a href="/home">¿Olvidaste tu contraseña?</a>
       <br>
       <br>
-      <button class="boton"type="submit" name="button">INGRESAR</button>
+      <button class="boton" type="submit" name="button">INGRESAR</button>
     <br>
     <br>
     </form>
