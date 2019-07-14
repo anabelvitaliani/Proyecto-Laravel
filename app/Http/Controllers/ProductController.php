@@ -23,48 +23,50 @@ class ProductController extends Controller
       ]);
     }
 
-    public function addToCart($id){
+    public function show($id){
       $cart = new Cart();
+      //se puede hacer new cart todas las veces necesarias porque session hay una sola
       $product = Product::find($id);
-      $cart->add($product);
-
-      return redirect("/product");
+      return view('product', compact('product', 'cart'));
     }
 
-    public function deleteToCart($id){
-      $product = Product::find($id);
-      $cart->delete($product);
+   public function addToCart($id){
+     $cart = new Cart();
+     $product = Product::find($id);
+     $cart->add($product);
 
-      return redirect("/product");
-    }
+       return redirect("/product");
+     }
 
-    public function checkout(){
+     public function checkout(){
+       $cart = new Cart();
+
+       if (!$cart->list()){
+       return redirect("/product");
+     }
+     return view("checkout");
+   }
+
+   public function finishCheckout(){
       $cart = new Cart();
-      dd($cart);
-      if (!$cart->list){
-        return redirect("/product");
-      }
-      return view("checkout");
+
+    $products = $cart->list();
+
+    foreach ($products as $product){
+      $product->stock = $product->stock - 1;
+      $product->save();
+
+      $product->customers()->attach(Auth::id());
     }
+    $cart->clear();
 
-    public function finishCheckout(){
-      $cart = new Cart();
-      $products = $cart->list();
+    return view("success");
+   }
 
-      foreach ($products as $product){
-        $product->stock = $product->stock - 1;
-        $product->save();
-
-        $product->customers()->attach(Auth::id());
-      }
-      $cart->clear();
-      return view("success");
-    }
-
-    public function search(Request $req){
-      $search =$req["search"];
-      $products = Product::where("name", "like", "%$search%")->get();
-      return view("search", compact("products"));
+   public function search(Request $request){
+      $search =$request["search"];
+      $product = Product::where("name", "like", "%$search%")->get();
+      return view("search", compact("product"));
     }
 
 

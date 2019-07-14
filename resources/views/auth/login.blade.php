@@ -45,5 +45,5 @@
     </form>
   </div>
 </main>
-<script type="text/javascript" src="/js/login/login.js"></script>
+<script type="text/javascript" src="/js/auth/login.js"></script>
 @endsection

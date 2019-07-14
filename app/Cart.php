@@ -8,8 +8,8 @@ class cart extends Model
 {
   public function add(Product $product){
     $cart = session('cart');
-
-    if ('cart'){
+    $product->quantity = 1;
+    if ($cart){
       $cart[] = $product;
     } else {
       $cart = [$product];
@@ -18,9 +18,7 @@ class cart extends Model
     session(['cart' => $cart]);
   }
 
-  public function clear(){
-   session(['cart' => []]);
-  }
+
 
   public function list(){
     return session('cart');
@@ -39,5 +37,14 @@ class cart extends Model
       }
     }
     return false;
+
   }
+
+  public function clear(){
+   session(['cart' => []]);
+  }
+
+
+
+
 }

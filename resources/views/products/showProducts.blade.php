@@ -16,17 +16,7 @@
 @endauth
 
 
-    <br>
-    <nav>
-    <div class="">
-      <form action="/search" method="GET">
-      {{csrf_field()}}
-      <input type="text" name="search" class="search">
-      <button type="submit" class="btn" class="submit1">Buscar</button>
-        </form>
 
-    </div>
-    </nav>
 
     <div id="paginacion">
       {!!$products->render()!!}
@@ -34,34 +24,34 @@
     </div>
 
 
-
   @foreach ($products as $product)
   <div class="product">
-  <img src="/storage/productsImg/{{$product->avatar}}" class="productimg">
+  <img src="/storage/productsImg/{{$product->avatar}}" class="productimg" width="400">
   <br>
   <br>
     <strong>{{$product->nombre}}</strong>
+    <br>
     <br>
     <p>{{$product->descripcion}}</p>
     <br>
     <p>{{isset($product->categorie) ? $product->categorie->name : ''}}</p>
     @if ($product->descuento!=0)
     <p class="preciotachado">{{$product->precio}}</p>
-    {{ ($product->precio/100)*(100-$product->descuento) }}
+    <strong>{{ ($product->precio/100)*(100-$product->descuento) }}</strong>
     @else
-    <p>{{$product->precio}}</p>
+    <p><strong>{{$product->precio}}</strong></p>
     @endif
 
-    @if ($product->stock)
-    <p>Hay stock</p>
-    @else
-    <p>Sin stock</p>
-    @endif
+
+      @auth
+        @if(auth::user()->admin)
+        @if ($product->stock)
+        <p>Hay stock</p>
+        @else
+        <p>Sin stock</p>
+        @endif
     <p>{{$product['id']}}</p>
 
-    @auth
-
-      @if(auth::user()->admin)
         <a href="/product/edit/{{$product['id']}}">Modificar producto</a>
         <a href="/product/delete/{{$product['id']}}">Eliminar producto</a>
       @endif
@@ -70,23 +60,21 @@
 
       <br>
       <br>
-      @if ($cart->list())
-        <a href="/chechout"></a>
-    <button class="btn btn-ssuccess">Carrito</button>
-      @endif
+
+
+
       @if (!$cart->contains($product))
-        <form action="/ToCart/{{$product['id']}}" method="post">
-          {{csrf_field()}}
-          <button type="submit" class="submit">Quitar del Carrito</button>
-        </form>
-      @endif
-      @if (!$cart->contains($product))
-        <form action="/addToCart/{{$product['id']}}" method="post">
-          {{csrf_field()}}
+        <form action="/addToCart/{{$product->id}}" method="post">
+          {{ csrf_field() }}
           <button type="submit" class="submit">Agregar al Carrito</button>
         </form>
       @endif
-
+      @if ($cart->list())
+        <form action="/checkout" method="post">
+          {{ csrf_field() }}
+          <button type="submit" class="btn-btn-check">Mis Compras</button>
+            </form>
+      @endif
     </div>
   @endforeach
 

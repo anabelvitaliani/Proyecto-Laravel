@@ -5,28 +5,36 @@
 @endsection
 
 @section('contenido')
-<h1>Carrito</h1>
-<ul>
-@php
-  $total = 0;
-  @endphp
-  @foreach ($cart->list() as $product)
-    <li>
-      {{$product->name}}: ${{$product->price}}
-    </li>
-  @php
-    $total += $product->price;
-  @endphp
-  @endforeach
-</ul>
-<p>Total: ${{$total}}</p>
-@if (Auth::check())
-  <form action="checkout" method="post">
+<h2>Mi Carrito</h2>
+<div class="checkout">
+  <ul>
+      <?php
+    $total = 0;
+    ?>
+    @foreach ($cart->list() as $product)
+      <li>
+        {{$product->nombre}}: ${{$product->precio}}
+      </li>
+        <?php
+      $total += $product->precio;
+    ?>
+    @endforeach
+  </ul>
+  <br>
+  <p>Total: ${{$total}}</p>
+  <br>
+  @if (Auth::check())
+    <form action="/success" method="post">
+      {{csrf_field()}}
+      <button type="submit" class="btn-btn-check-f">Finalizar Compra</button>
+    </form>
+    <form action="/deleteToCart/{{$product->id}}" method="post">
     {{csrf_field()}}
-    <button type="submit">Finalizar Compra</button>
-  </form>
-@else
-  <p style="color:red">Inicia sesión para finalizar la compra</p>
-@endif
+        <button type="submit" class="btn-btn-check-q">Eliminar del Carrito</button>
+      </form>
+  @else
+    <p style="color:red">Inicia sesión para finalizar la compra</p>
+  @endif
 
+</div>
 @endsection

@@ -2,6 +2,14 @@
   margin:0px;
 /*  width:100vw;*/
 }
+
+.benve{
+  font-family: "Latin Modern Roman 10";
+  font-size: 25px;
+  font-style: italic;
+  text-align: center;
+  padding-top: 8px;
+}
 .menu{
   background-color:black;
   width:100%;
@@ -93,4 +101,30 @@ hr{
   display:inline-flex;
   justify-content:space-around;
 }
+}
+
+.btn{
+  padding: 8px;
+  border-radius: 5px;
+  font-style: italic;
+  border: #fff;
+  font-family: sans-serif;
+  color: black;
+  background-color: #807d7dad;
+  display: inline-flex;
+}
+
+.search{
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: left;
+  padding: 4px;
+  margin: 2% 0 3% 0;
+  font-size: inherit;
+ display: inline-flex;
+
+}
+
+.search-b{
+  padding-left: 78%;
 }
