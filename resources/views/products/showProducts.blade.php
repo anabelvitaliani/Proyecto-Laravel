@@ -5,7 +5,7 @@
 @endsection
 
 @section('contenido')
-<h2>Lista de Productos</h2>
+<h2>Nuestros productos</h2>
 <br>
 @auth
 
@@ -50,7 +50,6 @@
         @else
         <p>Sin stock</p>
         @endif
-    <p>{{$product['id']}}</p>
 
         <a href="/product/edit/{{$product['id']}}">Modificar producto</a>
         <a href="/product/delete/{{$product['id']}}">Eliminar producto</a>
@@ -77,7 +76,5 @@
       @endif
     </div>
   @endforeach
-
-
 
 @endsection

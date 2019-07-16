@@ -15,19 +15,33 @@ h1 {
   margin:0;
 }
 
-.preguntas {
+.contenedor {
   background-color: #3B0B0B;
-  padding:20px;
+  padding: 0px 20px 20px;
 }
 
-.preguntas article {
+.search{
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: left;
+  padding: 4px;
+  margin: 8% 0 3% 0;
+  font-size: inherit;
+ display: inline-flex;
+
+}
+
+.search-b{
+  padding-left: 78%;
+}
+.contenedor article {
   background-color: white;
   margin: 20px 0 0 0;
   border: 1px solid black;
   padding:10px;
 }
 
-.preguntas article p {
+.contenedor article p {
 padding: 7px 0px;
 }
 

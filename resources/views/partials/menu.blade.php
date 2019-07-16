@@ -19,7 +19,6 @@
 
       <li><a href="/preguntas">Preguntas Frecuentes</a></li>
       <li><a href="#contacto">Contactate con nosotros</a></li>
-        <li></li><a href="/checkout"><img border="0" height="36" width="40"src="../Imagenes/img/icono48.png"/></a></li>
       @auth
         <li><a href="{{ route('logout') }}"
            onclick="event.preventDefault();
@@ -28,6 +27,7 @@
             @csrf
         </form>
       @endauth
+      <li><a href="/checkout"><img border="0" height="30" width="35"src="../Imagenes/img/icono48.png"/></a></li>
     </ul>
     <label for="menu-hamb" class="label-hamb"><img src="../Imagenes/img/menu2.png" alt="menu" class="hamburguesa"></label>
   </nav>

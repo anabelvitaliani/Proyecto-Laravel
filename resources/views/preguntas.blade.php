@@ -5,8 +5,6 @@
 @endsection
 @section('contenido')
 
-    <main class='preguntas'>
-     <br>
      <br>
      <h1>PREGUNTAS FRECUENTES</h1>
      <br>
@@ -42,6 +40,5 @@
        <b>Puedo reservar una compra para retirarlo más tarde en el local?</b>
        <p>No hacemos reservas, las compras son por orden de llegada. Si sabés qué vas a necesitar con anticipación podés hacer un pedido con 48hs hábiles de anticipación.</p>
      </article>
- </main>
 
 @endsection

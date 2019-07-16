@@ -11,7 +11,6 @@
 
       <!--seguridad-->
       @csrf
-
       <div class="">
         <label class="label" for="nombre">Nombre</label>
         <!--los name de los input tienen que ser iguales a los de la db-->
@@ -72,4 +71,5 @@
     </form>
   </div>
 </main>
+<script type="text/javascript" src="/js/products/newProduct.js"></script>
 @endsection

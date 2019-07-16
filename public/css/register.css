@@ -14,12 +14,26 @@ h1 {
   font-style: italic;
 }
 
+.search{
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: left;
+  padding: 4px;
+  margin: 8% 0 3% 0;
+  font-size: inherit;
+ display: inline-flex;
+
+}
+
+.search-b{
+  padding-left: 78%;
+}
 .contenedor{
   background-image: url('../Imagenes/img/register.jpg');
   background-size: cover;
 }
 .main {
-  padding: 10% 6%;
+  padding: 3% 6% 6%;
 }
 
 input {

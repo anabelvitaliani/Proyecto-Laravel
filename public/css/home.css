@@ -18,6 +18,20 @@ h2 {
   margin-left: 25px;
 }
 
+.search{
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: left;
+  padding: 4px;
+  margin: 5% 0 3% 0;
+  font-size: inherit;
+ display: inline-flex;
+
+}
+
+.search-b{
+  padding-left: 78%;
+}
 .container-primary {
   background-image: url("../Imagenes/img/fonfo-primary.jpg");
   margin-top: 40px;

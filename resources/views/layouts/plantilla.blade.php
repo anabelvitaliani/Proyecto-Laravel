@@ -17,22 +17,18 @@
   <body>
     <br>
 @include('partials.menu')
-<div class="search-b">
-  <form action="/search" method="GET">
-  {{csrf_field()}}
-  <input type="text" name="search" class="search">
-  <button type="submit" class="btn" class="submit1">Buscar</button>
-    </form>
 
-</div>
-@if (Auth::check())
-  <h3 class="benve">
-    Bienvenid@ {{Auth::user()->name}}!!
-</h3>
-@endif
 
 <div class="contenedor">
 
+  <div class="search-b">
+    <form action="/search" method="GET">
+    {{csrf_field()}}
+    <input type="text" name="search" class="search">
+    <button type="submit" class="btn" class="submit1">Buscar</button>
+      </form>
+
+  </div>
 
 @yield('contenido')
 

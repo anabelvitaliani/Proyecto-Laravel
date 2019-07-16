@@ -6,9 +6,15 @@
 @section('contenido')
   <div class="contenedor">
        <main>
+         @if (Auth::check())
+           <h3 class="benve">
+             Bienvenid@ {{Auth::user()->name}}!!
+         </h3>
+         @else
          <h2 class="bienvenido">
            ¡Bienvenido!
          </h2>
+         @endif
          <section>
               <br>
               <div id="slider">

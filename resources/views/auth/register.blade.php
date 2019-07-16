@@ -4,10 +4,9 @@
 <link rel="stylesheet" href="/css/register.css">
 @endsection
 @section('contenido')
-     <div class="contenedor">
 
-    <main class="main">
-      <div class="form-register">
+<main class="main">
+  <div class="form-register">
     <form class="register" action="/register" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}
       <div class="form-group">
@@ -76,10 +75,8 @@
 
     </div>
     </form>
-      </div>
-    </main>
-
   </div>
+</main>
 
 <script type class = "div"="text/javascript" src="/js/auth/register.js"></script>
 @endsection

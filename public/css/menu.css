@@ -1,6 +1,5 @@
 *{
   margin:0px;
-/*  width:100vw;*/
 }
 
 .benve{
@@ -52,7 +51,7 @@ hr{
 }
 .navegador ul{
   display:block;
-  width:100vw;
+  width:100%;
   padding:0;
 }
 .navegador ul li{
@@ -90,7 +89,7 @@ hr{
   display:none;
 }
 .nombre{
-  width:100vw;
+  width:100%;
   text-align:center;
   top:10%;
   left:0vh;
@@ -112,19 +111,4 @@ hr{
   color: black;
   background-color: #807d7dad;
   display: inline-flex;
-}
-
-.search{
-  border-radius: 5px;
-  font-size: 20px;
-  text-align: left;
-  padding: 4px;
-  margin: 2% 0 3% 0;
-  font-size: inherit;
- display: inline-flex;
-
-}
-
-.search-b{
-  padding-left: 78%;
 }

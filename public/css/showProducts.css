@@ -9,11 +9,31 @@
 h2 {
   font-family: 'Playfair Display SC', serif;;
   font-size: 2em;
+  color:white;
 }
-
+h3 {
+  /*color: white;*/
+}
 .product {
   background-color: #f8e0e6b3;
   padding:20px;
+}
+.pagination li{
+  display:inline;
+}
+.search{
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: left;
+  padding: 4px;
+  margin: 8% 0 3% 0;
+  font-size: inherit;
+ display: inline-flex;
+
+}
+
+.search-b{
+  padding-left: 78%;
 }
 
 .contenedor {
@@ -22,7 +42,7 @@ h2 {
   background-attachment: fixed;
   background-size: cover;
   background-color: #eee;
-  padding: 50px 15px;
+  padding: 0px 15px 50px;
   text-align: center;
   width:100%;
 }
@@ -135,6 +155,8 @@ img {
 #nuevoproducto{
   display:block;
   padding-top: 5px;
+  font-size: 18px;
+  text-align: left;
 }
 .productimg{
   height: 20vh;

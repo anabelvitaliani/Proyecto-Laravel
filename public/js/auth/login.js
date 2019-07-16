@@ -2,7 +2,7 @@ window.onload = function() {
 
   var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
-  var form = document.querySelector('form');
+  var form = document.querySelector('.login');
 
     var email = document.querySelector('#email');
     var password = document.querySelector('#password');

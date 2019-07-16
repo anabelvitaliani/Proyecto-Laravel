@@ -72,4 +72,5 @@
     </form>
   </div>
 </main>
+<script type="text/javascript" src="/js/products/newProduct.js"></script>
 @endsection

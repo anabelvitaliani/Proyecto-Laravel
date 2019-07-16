@@ -5,9 +5,12 @@ extends('layouts.plantilla')
 @endsection
 
 @section('contenido')
-<h1>Felicidades!!</h1>
+<h2>Felicidades!!</h2>
 <p>Ha finalizado exitosamente su compra!!</p>
-<p>
-  <a href="/products">Continuar comprando</a>
-</p>
+<br>
+  <form action="/product" method="post">
+    {{csrf_field()}}
+    <button type="submit" class="btn-btn-check-f">Continuar Comprando</button>
+  </form>
+
 @endsection

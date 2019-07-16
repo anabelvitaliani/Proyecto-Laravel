@@ -2,12 +2,12 @@ window.onload = function () {
 
 var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
-var form = document.querySelector('form');
+var form = document.querySelector('.register');
 var elementos = form.elements;
 var email = document.querySelector('#email');
 var password = document.querySelector('#password');
 var confirm = document.querySelector('#password_confirmation');
-var div = document.querySelectorAll('.div');
+//var div = document.querySelectorAll('.div');
 
 function validarVacio(input) {
     if (input.value.trim() == '') {
@@ -24,11 +24,9 @@ function pintarError(input, mensaje) {
     input.parentElement.append(mark);
 }
 
-
 form.onsubmit = function (event) {
 
   for (elemento of elementos) {
-
   if (elemento.type == 'submit' || elemento.type == 'hidden' || elemento.type == 'reset' || elemento.id == 'com') {
     continue;
   }
@@ -76,7 +74,7 @@ password.onblur = function(event){
 }
 
 for (elemento of elementos) {
-  if (elemento.type == 'submit' || elemento.type == 'hidden' || elemento.type == 'reset' || elemento.id == 'com' || elemento.id == '#email' || elemento.id == '#password' || elemento.id == '#password_confirmation') {
+  if (elemento.type == 'submit' || elemento.type == 'hidden' || elemento.type == 'reset' || elemento.id == 'com' || elemento.id == 'email' || elemento.id == 'password' || elemento.id == 'password_confirmation') {
     continue;
   }
 

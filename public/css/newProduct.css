@@ -17,6 +17,20 @@ mark {
   background-color: #FFF9C4;
   color:red;
 }
+.search{
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: left;
+  padding: 4px;
+  margin: 8% 0 3% 0;
+  font-size: inherit;
+ display: inline-flex;
+
+}
+
+.search-b{
+  padding-left: 78%;
+}
 .contenedor{
   background-image: url('../Imagenes/img/register.jpg');
   background-size: cover;
@@ -35,9 +49,12 @@ input {
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 0;
-  margin-bottom:6%;
+  /*margin-bottom:6%;*/
 }
 
+.main {
+  padding: 3% 6% 6%;
+}
 .label{
   color: #fff;
   font-size: 25px;
