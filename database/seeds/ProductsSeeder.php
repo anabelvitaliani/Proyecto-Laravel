@@ -19,7 +19,7 @@ class ProductsSeeder extends Seeder
               "descripcion"=> "Delicioso bocadito de chocolate relleno de un suave y tentador dulce de leche.",
               "precio"=>150,
               "descuento"=>0,
-              "avatar"=>"Bombonddl.jpg",
+              "avatar"=>"bombon-dulce-de-leche.jpg",
               "stock" =>true,
               "categorie_id"=>1,
             ],

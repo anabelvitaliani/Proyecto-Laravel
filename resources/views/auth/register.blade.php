@@ -53,7 +53,7 @@
 
     <div class = "div">
       <label for="avatar" class="label-registro">Foto de perfil</label>
-      <input type="file" name="avatar" value="">
+      <input id="file" type="file" name="avatar" value="">
     </div>
 
     <div class = "div">

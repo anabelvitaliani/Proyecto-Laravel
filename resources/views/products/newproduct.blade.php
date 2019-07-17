@@ -59,7 +59,7 @@
 
       <div class="">
         <label class="label" for="avatar">Avatar</label>
-        <input type="file" name="avatar" value="{{ old('avatar') }}">
+        <input type="file" id="file" name="avatar" value="{{ old('avatar') }}">
       </div>
       @error ('avatar')
         <mark class=""> {{ $message }} </mark>

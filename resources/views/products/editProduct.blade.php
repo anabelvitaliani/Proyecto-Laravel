@@ -61,7 +61,7 @@
 
       <div class="">
         <label class="label" for="avatar">Avatar</label>
-        <input type="file" name="avatar" value="{{ old('avatar', $product->categorie->avatar)}}">
+        <input type="file" id="file" name="avatar" value="{{ old('avatar', $product->categorie->avatar)}}">
         @error ('avatar')
           <mark class=""> {{ $message }} </mark>
         @enderror

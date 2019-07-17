@@ -21,6 +21,9 @@ h3 {
 .pagination li{
   display:inline;
 }
+.vacio{
+  font-size: 20px;
+}
 .search{
   border-radius: 5px;
   font-size: 20px;
@@ -35,7 +38,9 @@ h3 {
 .search-b{
   padding-left: 78%;
 }
-
+.sucess{
+  
+}
 .contenedor {
   background-image: url("../Imagenes/img/fonfo-primary.jpg");
   background-repeat: no-repeat;
@@ -81,8 +86,8 @@ h3 {
   border: #fff;
   font-family: sans-serif;
   color: #fff;
-  text-align: center;
-  float: left;
+/*  text-align: center;
+  float: left;*/
 }
 
 a {
