@@ -17,5 +17,6 @@ Route::get("/cursos","CursosController@getComisionesDH");
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+//no hace falta poner en la ruta lo que llega x querySrting
+//api siempre responde en json
 Route::get('/buscarEmail', 'ApiUserController@getUser');

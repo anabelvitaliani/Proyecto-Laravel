@@ -1,7 +1,8 @@
 window.onload = function () {
 
 var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-var regexNum = /^[0-9]+$/
+var regexNum = /^[0-9]+$/;
+var regexString = /^[a-z A-Z]{1,30}$/;
 
 var form = document.querySelector('.register');
 var elementos = form.elements;
@@ -10,6 +11,16 @@ var password = document.querySelector('#password');
 var confirm = document.querySelector('#password_confirmation');
 var file = document.querySelector('#file');
 var telefono = document.querySelector('#telefono');
+var name = document.querySelector('#name');
+var surname = document.querySelector('#surname');
+
+function validarString(input){
+  if (!(regexString).exec(input.value)) {
+    pintarError(input, "Este campo debe contener solo letras");
+    return true;
+  }
+  return false;
+}
 
 function validarNum(input) {
   if (!(regexNum).exec(telefono.value)) {
@@ -61,11 +72,25 @@ form.onsubmit = function (event) {
           }
     } else if(elemento.name == 'telefono' && validarNum(elemento)){
       event.preventDefault();
+    } else if((elemento.name == 'name' || elemento.name == 'surname') && validarString(elemento)){
+      event.preventDefault();
     }
+    if (elemento.name == 'email' && regexEmail.test(elemento.value)) {
+      fetch('http://localhost:8000/api/buscarEmail?email='+ elemento.value)
+      .then( (response) => { return response.json(); })
+      .then( (datos) => {
+        if (datos.existe) {
+          pintarError(email, "El email ya está registrado");
+          event.preventDefault();
+        }
+      })
+      .catch( (error) =>{
 
+      })
+    }
   }
 
-  if (file.value.split(".")[file.value.split(".").length-1] != 'png' || file.value.split(".")[file.value.split(".").length-1]!='jpg' || file.value.split(".")[file.value.split(".").length-1]!='img' || file.value.split(".")[file.value.split(".").length-1]!='bmp') {
+  if (!validarVacio(elemento) && (file.value.split(".")[file.value.split(".").length-1] != 'png' || file.value.split(".")[file.value.split(".").length-1]!='jpg' || file.value.split(".")[file.value.split(".").length-1]!='img' || file.value.split(".")[file.value.split(".").length-1]!='bmp') {
 
     pintarError(file, "Formato inválido");
   }
@@ -77,6 +102,20 @@ telefono.onblur = function(event){
         this.parentElement.removeChild(this.parentElement.children[2]);
   }
   if(!validarVacio(this) && validarNum(this)){}
+}
+
+name.onblur = function(event){
+  if (this.parentElement.children[2]) {
+        this.parentElement.removeChild(this.parentElement.children[2]);
+  }
+  if(!validarVacio(this) && validarString(this)){}
+}
+
+surname.onblur = function(event){
+  if (this.parentElement.children[2]) {
+        this.parentElement.removeChild(this.parentElement.children[2]);
+  }
+  if(!validarVacio(this) && validarString(this)){}
 }
 
 file.onblur = function(event){
@@ -125,8 +164,10 @@ confirm.onblur = function(event){
   }
 }
 
+
+
 for (elemento of elementos) {
-  if (elemento.type == 'submit' || elemento.type == 'hidden' || elemento.type == 'reset' || elemento.id == 'com' || elemento.id == 'email' || elemento.id == 'password' || elemento.id == 'password_confirmation'|| elemento.id == 'telefono') {
+  if (elemento.type == 'submit' || elemento.type == 'hidden' || elemento.type == 'reset' || elemento.id == 'com' || elemento.id == 'email' || elemento.id == 'password' || elemento.id == 'password_confirmation'|| elemento.id == 'telefono' || elemento.name == 'name' || elemento.name == 'surname') {
     continue;
   }
 
@@ -135,6 +176,6 @@ for (elemento of elementos) {
           this.parentElement.removeChild(this.parentElement.children[2]);
     }
     validarVacio(this);
-    }
   }
+}
 }

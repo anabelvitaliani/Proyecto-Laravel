@@ -17,13 +17,13 @@ Route::bind('product', function($slug){
 
 Route::get('/product/delete/{id}', 'ProductController@delete');
 //carga el formulario
-Route::get('/product/create', 'ProductController@create')->middleware('admin');
+Route::get('/product/create', 'ProductController@create')->middleware('auth')->middleware('admin');
 // guarda los datos
-Route::post('/product/create', 'ProductController@save')->middleware('admin');
+Route::post('/product/create', 'ProductController@save')->middleware('auth')->middleware('admin');
 //carga el formulario
-Route::get('/product/edit/{id}', 'ProductController@edit')->middleware('admin');
+Route::get('/product/edit/{id}', 'ProductController@edit')->middleware('auth')->middleware('admin');
 // guarda las modificaciones
-Route::post('/product/edit/{id}', 'ProductController@update')->middleware('admin');
+Route::post('/product/edit/{id}', 'ProductController@update')->middleware('auth')->middleware('admin');
 //listado de productos
 Route::get('/product', 'ProductController@index');
 Route::post('/product', 'ProductController@index');

@@ -59,6 +59,17 @@ window.onload = function() {
             div.append(error);
             event.preventDefault();
         }
+      if (regexEmail.test(email.value) && password.value.trim() != '') {
+        fetch('http://localhost:8000/api/buscarEmail?email='+email.value)
+        .then( (response) => return response.json() )
+        .then( (datos) => {
+          if (datos.existe == false) {
+            pintarError(email, "Email o clave invalidos")
+          }
+        })
+        .catch( (error) =>{
 
+        })
       }
+    }
 };

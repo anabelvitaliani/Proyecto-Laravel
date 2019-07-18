@@ -5,8 +5,8 @@
 @endsection
 
 @section('contenido')
-<h2 class="finish1">Felicidades!!</h2>
 <div class="contenedor-succes">
+<h2 class="finish1">Felicidades!!</h2>
 
 <div class="sucess">
   <p class="finish">Ha finalizado exitosamente su compra!!</p>
@@ -15,7 +15,7 @@
     {{csrf_field()}}
     <button type="submit" class="btn-btn-check-s">Continuar Comprando</button>
   </form>
-  <form action="/" method="post">
+  <form action="/" method="get">
     {{csrf_field()}}
     <button type="submit" class="btn-btn-check-s">Ir al Inicio</button>
   </form>

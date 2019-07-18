@@ -32,7 +32,7 @@
 
       <div class="">
         <label class="label, precio" for="precio">Precio</label>
-        <input type="text" name="precio" value="{{ old('precio', $product->precio) }}">
+        <input type="text"  id = "precio"name="precio" value="{{ old('precio', $product->precio) }}">
         @error ('precio')
           <mark class=""> {{ $message }} </mark>
         @enderror
@@ -40,7 +40,7 @@
 
       <div class="">
         <label class="label, desc" for="descuento">Descuento</label>
-        <input type="text" name="descuento" value="{{ old('descuento', $product->descuento) }}">
+        <input type="text"  id = "desc" name="descuento" value="{{ old('descuento', $product->descuento) }}">
         @error ('descuento')
           <mark class=""> {{ $message }} </mark>
         @enderror

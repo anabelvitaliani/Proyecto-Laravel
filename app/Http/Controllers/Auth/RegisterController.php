@@ -68,7 +68,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
+      $path = '';
+      if (isset($data['avatar'])) {
+        $path = $data['avatar']->store("public/usersImg");
+        $path = basename($path);
+      }
 
         return User::create([
 
@@ -77,7 +81,7 @@ class RegisterController extends Controller
             'fecha' => $data['fecha'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'avatar' => Hash::make($data['avatar']),
+            'avatar' => $path,
             'telefono' => $data['telefono'],
             'comentarios' => $data['com'],
 
@@ -85,8 +89,8 @@ class RegisterController extends Controller
     }
 
     public function save(Request $request){
-      $path = $request->file("avatar")->store("public/usersImg");
-      $nombreAvatar = basename($path);
+
+
     }
 
 }
