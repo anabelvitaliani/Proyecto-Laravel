@@ -10,7 +10,7 @@
 @auth
 
   @if(auth::user()->admin)
-    <a href="/product/create" id="nuevoproducto">Nuevo producto</a>
+    <a href="/product/create" id="nuevoproducto">Crear nuevo producto</a>
   <!--  {{ $products->random() }} -->
   @endif
 @endauth
@@ -46,7 +46,13 @@
       @auth
         @if(auth::user()->admin)
         @if ($product->stock)
-        <p>Hay stock</p>
+          <p>Hay stock</p>
+          @if (!$cart->contains($product))
+            <form action="/addToCart/{{$product->id}}" method="post">
+              {{ csrf_field() }}
+              <button type="submit" class="submit">Agregar al Carrito</button>
+            </form>
+          @endif
         @else
         <p>Sin stock</p>
         @endif
@@ -60,14 +66,6 @@
       <br>
       <br>
 
-
-
-      @if (!$cart->contains($product))
-        <form action="/addToCart/{{$product->id}}" method="post">
-          {{ csrf_field() }}
-          <button type="submit" class="submit">Agregar al Carrito</button>
-        </form>
-      @endif
       @if ($cart->list())
         <form action="/checkout" method="post">
           {{ csrf_field() }}

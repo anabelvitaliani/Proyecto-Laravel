@@ -1,6 +1,7 @@
 window.onload = function () {
 
 var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+var regexNum = /^[0-9]+$/
 
 var form = document.querySelector('.register');
 var elementos = form.elements;
@@ -8,7 +9,15 @@ var email = document.querySelector('#email');
 var password = document.querySelector('#password');
 var confirm = document.querySelector('#password_confirmation');
 var file = document.querySelector('#file');
+var telefono = document.querySelector('#telefono');
 
+function validarNum(input) {
+  if (!(regexNum).exec(telefono.value)) {
+    pintarError(input, "Este campo debe contener solo numeros");
+    return true;
+  }
+  return false;
+}
 
 function validarVacio(input) {
     if (input.value.trim() == '') {
@@ -16,7 +25,7 @@ function validarVacio(input) {
         input.value = "";
         return true;
     }
-    return false
+    return false;
 }
 
 function pintarError(input, mensaje) {
@@ -50,7 +59,10 @@ form.onsubmit = function (event) {
               pintarError(elemento, 'Las contraseñas no coinciden');
               event.preventDefault();
           }
+    } else if(elemento.name == 'telefono' && validarNum(elemento)){
+      event.preventDefault();
     }
+
   }
 
   if (file.value.split(".")[file.value.split(".").length-1] != 'png' || file.value.split(".")[file.value.split(".").length-1]!='jpg' || file.value.split(".")[file.value.split(".").length-1]!='img' || file.value.split(".")[file.value.split(".").length-1]!='bmp') {
@@ -58,6 +70,13 @@ form.onsubmit = function (event) {
     pintarError(file, "Formato inválido");
   }
 
+}
+
+telefono.onblur = function(event){
+  if (this.parentElement.children[2]) {
+        this.parentElement.removeChild(this.parentElement.children[2]);
+  }
+  if(!validarVacio(this) && validarNum(this)){}
 }
 
 file.onblur = function(event){
@@ -107,7 +126,7 @@ confirm.onblur = function(event){
 }
 
 for (elemento of elementos) {
-  if (elemento.type == 'submit' || elemento.type == 'hidden' || elemento.type == 'reset' || elemento.id == 'com' || elemento.id == 'email' || elemento.id == 'password' || elemento.id == 'password_confirmation') {
+  if (elemento.type == 'submit' || elemento.type == 'hidden' || elemento.type == 'reset' || elemento.id == 'com' || elemento.id == 'email' || elemento.id == 'password' || elemento.id == 'password_confirmation'|| elemento.id == 'telefono') {
     continue;
   }
 

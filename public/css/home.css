@@ -17,6 +17,69 @@ h2 {
   width: 1300px;
   margin-left: 25px;
 }
+.sucess{
+  border: 1px solid black;
+/*  display: inline-grid;*/
+  height:100%;
+  padding:2px;
+  margin: 10px;
+  overflow:auto;
+  font-size:1em;
+  background-color: #f8e0e6b3;
+  padding:20px;
+}
+
+
+.search{
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: left;
+  padding: 4px;
+  margin: 8% 0 3% 0;
+  font-size: inherit;
+ display: inline-flex;
+
+}
+
+.search-b{
+  padding-left: 78%;
+}
+
+.finish{
+  text-align: left;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 10px
+}
+.finish1{
+    font-family: 'Playfair Display SC', serif;;
+    font-size: 2em;
+    color:#141415f5;
+  }
+.btn-btn-check-s{
+  padding:6px;
+  margin:8px;
+  background-color: #11a744b8;
+  border-radius: 5px;
+  font-style: italic;
+  border: #fff;
+  font-family: sans-serif;
+  color: #fff;
+  text-align: center;
+  float: right;
+}
+.contenedor-succes {
+  background-image: url("../Imagenes/img/fonfo-primary.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #eee;
+  padding: 0px 15px 50px;
+  text-align: center;
+  width:100%;
+}
 
 .search{
   border-radius: 5px;

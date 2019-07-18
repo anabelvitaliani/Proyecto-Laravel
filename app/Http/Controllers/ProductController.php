@@ -21,49 +21,9 @@ class ProductController extends Controller
       }
 
       $products = Product::paginate(3);
-    //  $categories = Categorie::paginate(2);
-      //dd($products);
       return view('products.showProducts', compact('products', 'cart'))
-      //  "categories" => $categories
       ;
     }
-
-    public function show($id){
-      $cart = new Cart();
-      //se puede hacer new cart todas las veces necesarias porque session hay una sola
-      $product = Product::find($id);
-      return view('product', compact('product', 'cart'));
-    }
-
-   public function addToCart($id){
-     $cart = new Cart();
-     $product = Product::find($id);
-     $cart->add($product);
-
-       return redirect("/product");
-    }
-
-     public function checkout(){
-       $cart = new Cart();
-
-     return view("checkout", compact('cart'));
-   }
-
-   public function finishCheckout(){
-      $cart = new Cart();
-
-  /*    $products = $cart->list();
-
-    foreach ($products as $product){
-    /*  $product->stock = $product->stock - 1;
-      $product->save();
-
-      $product->customers()->attach(Auth::id());
-    }*/
-    $cart->clear();
-
-    return view("products.success");
-   }
 
    public function search(Request $request){
       $search = $request->search;
@@ -181,14 +141,4 @@ public function update($id, Request $request){
       $product->delete();
       return redirect('/product');
     }
-
-  function deleteToCart($id){
-
-    $cart = new Cart();
-    $product = Product::find($id);
-    $cart->deleteToCart($product);
-
-    return response()->json(['eliminado' => $id], 200);
-
-  }
 }

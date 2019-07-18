@@ -44,7 +44,7 @@
                     </div>
                     <br>
                     <div class="button">
-                    <a href="#" target="_blank" >
+                    <a href="/product" target="_blank" >
                     <i class="fas fa-heart"></i> Alfajores
                     </a>
                     </div>
@@ -62,7 +62,7 @@
                     </p>
                     </div>
                     <div class="button">
-                    <a href="#" target="_blank" >
+                    <a href="/product" target="_blank" >
                     <i class="fas fa-heart"></i> Bocaditos
                     </a>
                     </div>
@@ -80,7 +80,7 @@
                     </p>
                     </div>
                     <div class="button">
-                    <a href="#" target="_blank" >
+                    <a href="/product" target="_blank" >
                     <i class="fas fa-heart"></i> Bombones
                     </a>
                     </div>
@@ -98,7 +98,7 @@
                     </p>
                     </div>
                     <div class="button">
-                    <a href="#" target="_blank" >
+                    <a href="/product" target="_blank" >
                     <i class="fas fa-heart"></i> Tortas
                     </a>
                     </div>
@@ -117,7 +117,7 @@
                     <br>
                     </div>
                     <div class="button">
-                    <a href="#" target="_blank" >
+                    <a href="/product" target="_blank" >
                     <i class="fas fa-heart"></i> Cookies
                     </a>
                     </div>
@@ -135,7 +135,7 @@
                     </p>
                     </div>
                     <div class="button">
-                    <a href="#" target="_blank" >
+                    <a href="/product" target="_blank" >
                     <i class="fas fa-heart"></i> Postres
                     </a>
                     </div>
@@ -165,8 +165,4 @@
 
   </main>
   </div>
-
-
-
-
 @endsection

@@ -25,7 +25,7 @@
     <form action="/product" method="GET">
     <input type="text" name="search" class="search">
     <button type="submit" class="btn" class="submit1">Buscar</button>
-      </form>
+    </form>
 
   </div>
 

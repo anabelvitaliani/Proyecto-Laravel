@@ -1,8 +1,20 @@
 window.onload = function(){
-//falta validar tipo de datos y file
+var regexNum = /^[0-9]+$/
+
 var form = document.querySelector('.form');
 var elementos = form.elements;
 var file = document.querySelector('#file');
+//var num = document.querySelectorAll('.num')
+//var desc = document.querySelector('.desc');
+//var precio = document.querySelector('.precio');
+//console.log(num.class)
+/*function validarNum(input) {
+  if (!regexNum.test(input.value)) {
+    pintarError(input, "Este campo debe contener solo numeros");
+    return true;
+  }
+  return false;
+}*/
 
 function validarVacio(input) {
     if (input.value.trim() == '') {
@@ -30,7 +42,10 @@ form.onsubmit = function(event) {
     }
     if (elemento.type != 'file' && validarVacio(elemento)) {
       event.preventDefault();
-    }
+    }  /*else if(elemento.class == 'num' && validarNum(elemento)){
+      console.log('bla')
+      event.preventDefault();
+    }*/
   }
 
   if (file.value.split(".")[file.value.split(".").length-1] != 'png' || file.value.split(".")[file.value.split(".").length-1]!='jpg' || file.value.split(".")[file.value.split(".").length-1]!='img' || file.value.split(".")[file.value.split(".").length-1]!='bmp') {
@@ -44,11 +59,14 @@ file.onblur = function(event){
         this.parentElement.removeChild(this.parentElement.children[2]);
   }
   if (file.value.split(".")[file.value.split(".").length-1] != 'png' || file.value.split(".")[file.value.split(".").length-1]!='jpg' || file.value.split(".")[file.value.split(".").length-1]!='img' || file.value.split(".")[file.value.split(".").length-1]!='bmp') {
-    console.log("hola")
     pintarError(file, "Formato inválido");
   }
 
 }
+
+/*num.onblur = function(event){
+  console.log('s')
+}*/
 for (elemento of elementos){
   if (elemento.type == 'submit' || elemento.type == 'hidden') {
     continue;
@@ -58,6 +76,8 @@ for (elemento of elementos){
           this.parentElement.removeChild(this.parentElement.children[2]);
     }
     validarVacio(this);
+
+  /*  if(elemento.class == 'num' && validarNum(this)){ }*/
   }
 }
 }
