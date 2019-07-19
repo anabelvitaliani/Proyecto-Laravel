@@ -50,5 +50,5 @@
   </form>
 @endif
 </div>
-<script type="text/javascript" src="js/checkout.js"></script>
+<script type="text/javascript" src="/js/checkout.js"></script>
 @endsection
