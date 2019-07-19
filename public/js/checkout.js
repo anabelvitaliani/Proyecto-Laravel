@@ -5,7 +5,6 @@ console.log(total);
 for (boton of eliminar) {
   boton.onclick = function(event) {
     var precio = parseFloat(this.getAttribute('precio'))
-    alert('hola');
 
   fetch('http://localhost:8000/deleteToCart/'+ this.value)
   .then(function(response){

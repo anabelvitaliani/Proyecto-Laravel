@@ -10,6 +10,7 @@ h2 {
   background-color: #FFF8F2;
   padding: 5px;
   text-align: center;
+  clear:
 }
 
 .container-primary {
@@ -74,6 +75,7 @@ h2 {
   background-color: #eee;
   text-align: center;
   width:100%;
+  position:relative;
 }
 
 .search{
@@ -88,7 +90,8 @@ h2 {
 }
 
 .search-b{
-  padding-left: 74%;
+  position: absolute;
+  right: 3%;
 }
 .container-primary {
   background-image: url("../Imagenes/img/fonfo-primary.jpg");

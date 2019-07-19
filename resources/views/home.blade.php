@@ -6,6 +6,9 @@
 @section('contenido')
   <div class="contenedor">
        <main>
+         <br>
+         <br>
+         <br>
          @if (Auth::check())
            <h3 class="benve">
              Bienvenid@ {{Auth::user()->name}}!!
