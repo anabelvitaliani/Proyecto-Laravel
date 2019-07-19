@@ -41,10 +41,6 @@ h2 {
 
 }
 
-.search-b{
-  padding-left: 78%;
-}
-
 .finish{
   text-align: left;
   font-family: 'Roboto Condensed', sans-serif;
@@ -92,7 +88,7 @@ h2 {
 }
 
 .search-b{
-  padding-left: 78%;
+  padding-left: 74%;
 }
 .container-primary {
   background-image: url("../Imagenes/img/fonfo-primary.jpg");
