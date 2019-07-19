@@ -76,7 +76,7 @@ form.onsubmit = function (event) {
       event.preventDefault();
     }
     if (elemento.name == 'email' && regexEmail.test(elemento.value)) {
-      fetch('http://chocolatemia.dhalumnos.com/api/buscarEmail?email='+ elemento.value)
+      fetch('http://www.chocolatemia.dhalumnos.com/api/buscarEmail?email='+ elemento.value)
       .then( (response) => { return response.json(); })
       .then( (datos) => {
         if (datos.existe) {
