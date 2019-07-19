@@ -6,14 +6,13 @@ for (boton of eliminar) {
   boton.onclick = function(event) {
     var precio = parseFloat(this.getAttribute('precio'))
 
-  fetch('http://chocolatemia.dhalumnos/deleteToCart/'+ this.value)
+  fetch('http://www.chocolatemia.dhalumnos.com/deleteToCart/'+ this.value)
   .then(function(response){
     return response.json();
   })
   .then((data) => {
     console.log(data)
     var li = document.querySelector('li#li-'+data.eliminado);
-
     li.parentElement.removeChild(li);
     document.querySelector(".total").innerText = total - precio;
   })
