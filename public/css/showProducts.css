@@ -36,7 +36,8 @@ h3 {
 }
 
 .search-b{
-  padding-left: 74%;
+  position: absolute;
+  right: 3%;
 }
 
 .contenedor {
@@ -48,6 +49,7 @@ h3 {
   padding: 0px 15px 50px;
   text-align: center;
   width:100%;
+  position:relative;
 }
 
 .btn-btn-check{

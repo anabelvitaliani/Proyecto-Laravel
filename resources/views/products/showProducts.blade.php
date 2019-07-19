@@ -3,8 +3,10 @@
 @section('estilos')
 <link rel="stylesheet" href="/css/showProducts.css">
 @endsection
-
 @section('contenido')
+<br>
+<br>
+<br>
 <h2>Nuestros productos</h2>
 <br>
 @auth

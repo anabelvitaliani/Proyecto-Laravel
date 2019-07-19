@@ -4,7 +4,9 @@
 <link rel="stylesheet" href="/css/register.css">
 @endsection
 @section('contenido')
-
+<br>
+<br>
+<br>
 <main class="main">
   <div class="form-register">
     <form class="register" action="/register" method="post" enctype="multipart/form-data">

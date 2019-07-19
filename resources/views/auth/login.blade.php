@@ -4,6 +4,9 @@
 <link rel="stylesheet" href="/css/login.css">
 @endsection
 @section('contenido')
+<br>
+<br>
+<br>
 <main class="main">
   <div class="form-login">
     <form class="login" action="/login" method="post">

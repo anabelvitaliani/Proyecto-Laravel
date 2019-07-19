@@ -19,6 +19,7 @@ h1 {
 .contenedor{
   background-image: url('../Imagenes/img/register.jpg');
   background-size: cover;
+    position:relative;
 }
 
 .search{
@@ -33,7 +34,8 @@ h1 {
 }
 
 .search-b{
-  padding-left: 74%;
+  position: absolute;
+  right: 3%;
 }
 
 input {

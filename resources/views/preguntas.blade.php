@@ -4,7 +4,9 @@
 <link rel="stylesheet" href="/css/preguntas.css">
 @endsection
 @section('contenido')
-
+<br>
+<br>
+<br>
      <br>
      <h1>PREGUNTAS FRECUENTES</h1>
      <br>
