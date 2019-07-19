@@ -60,7 +60,7 @@ window.onload = function() {
             event.preventDefault();
         }
       if (regexEmail.test(email.value) && password.value.trim() != '') {
-        fetch('http://localhost:8000/api/buscarEmail?email='+email.value)
+        fetch('http://chocolatemia.dhalumnos.com/api/buscarEmail?email='+email.value)
         .then( (response) => return response.json() )
         .then( (datos) => {
           if (datos.existe == false) {

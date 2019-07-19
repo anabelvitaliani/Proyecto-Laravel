@@ -6,7 +6,7 @@ for (boton of eliminar) {
   boton.onclick = function(event) {
     var precio = parseFloat(this.getAttribute('precio'))
 
-  fetch('http://localhost:8000/deleteToCart/'+ this.value)
+  fetch('http://chocolatemia.dhalumnos.com/deleteToCart/'+ this.value)
   .then(function(response){
     return response.json();
   })
