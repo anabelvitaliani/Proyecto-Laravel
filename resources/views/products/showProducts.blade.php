@@ -43,21 +43,22 @@
     @else
     <p><strong>{{$product->precio}}</strong></p>
     @endif
+    @if ($product->stock)
+      <p>Hay stock</p>
+      @if (!$cart->contains($product))
+        <form action="/addToCart/{{$product->id}}" method="post">
+          {{ csrf_field() }}
+          <button type="submit" class="submit">Agregar al Carrito</button>
+        </form>
+      @endif
+    @else
+    <p>Sin stock</p>
+    @endif
 
 
       @auth
         @if(auth::user()->admin)
-        @if ($product->stock)
-          <p>Hay stock</p>
-          @if (!$cart->contains($product))
-            <form action="/addToCart/{{$product->id}}" method="post">
-              {{ csrf_field() }}
-              <button type="submit" class="submit">Agregar al Carrito</button>
-            </form>
-          @endif
-        @else
-        <p>Sin stock</p>
-        @endif
+
 
         <a href="/product/edit/{{$product['id']}}">Modificar producto</a>
         <a href="/product/delete/{{$product['id']}}">Eliminar producto</a>
