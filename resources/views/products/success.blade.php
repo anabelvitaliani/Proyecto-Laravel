@@ -5,6 +5,9 @@
 @endsection
 
 @section('contenido')
+<br>
+<br>
+<br>
 <div class="contenedor-succes">
 <h2 class="finish1">Felicidades!!</h2>
 

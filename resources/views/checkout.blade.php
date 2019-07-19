@@ -5,6 +5,9 @@
 @endsection
 
 @section('contenido')
+<br>
+<br>
+<br>
 <h2>Mi Carrito</h2>
 <div class="checkout">
   <ul>
